@@ -16,5 +16,13 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+// products in dashboard
+Route::get('/products/create','ProductController@create')->name('products.create');
+Route::post('/products/store','ProductController@store')->name('store');
+
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
