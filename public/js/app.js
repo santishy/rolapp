@@ -1969,11 +1969,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       product: {},
-      fileSelected: null
+      fileSelected: null,
+      errors: null
     };
   },
   props: {
@@ -1987,12 +1993,14 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     // Crear producto, se envia al backend  productController->store()
     submit: function submit() {
+      var _this = this;
+
       var fd = new FormData(document.getElementById('formProduct'));
       fd.append('file', this.fileSelected);
       axios.post("/products/store", fd).then(function (res) {
         console.log(res);
       })["catch"](function (err) {
-        console.log(err.response.data);
+        _this.errors = err.response.data.errors;
       });
     },
     onFileSelected: function onFileSelected(event) {
@@ -37585,146 +37593,157 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "card border-0 shadow-sm" }, [
-    _c("div", { staticClass: "card-body" }, [
-      _c(
-        "form",
-        {
-          attrs: { id: "formProduct" },
-          on: {
-            submit: function($event) {
-              $event.preventDefault()
-              return _vm.submit($event)
+  return _c("div", [
+    _c("div", { staticClass: "alert alert-danger", attrs: { role: "alert" } }),
+    _vm._v(" "),
+    _c("div", { staticClass: "card border-0 shadow-sm" }, [
+      _c("div", { staticClass: "card-body" }, [
+        _c(
+          "form",
+          {
+            attrs: { id: "formProduct" },
+            on: {
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.submit($event)
+              }
             }
-          }
-        },
-        [
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "" } }, [_vm._v("Título")]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.product.title,
-                  expression: "product.title"
-                }
-              ],
-              staticClass: "form-control border-0",
-              attrs: {
-                type: "text",
-                placeholder: "Escribe el título",
-                name: "title",
-                required: ""
-              },
-              domProps: { value: _vm.product.title },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
+          },
+          [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", { attrs: { for: "" } }, [_vm._v("Título")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.product.title,
+                    expression: "product.title"
                   }
-                  _vm.$set(_vm.product, "title", $event.target.value)
-                }
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "" } }, [_vm._v("Descripción")]),
-            _vm._v(" "),
-            _c("textarea", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.product.description,
-                  expression: "product.description"
-                }
-              ],
-              staticClass: "form-control border-0",
-              attrs: { placeholder: "Descripción...", name: "description" },
-              domProps: { value: _vm.product.description },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
+                ],
+                staticClass: "form-control border-0",
+                attrs: {
+                  type: "text",
+                  placeholder: "Escribe el título",
+                  name: "title",
+                  required: ""
+                },
+                domProps: { value: _vm.product.title },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.product, "title", $event.target.value)
                   }
-                  _vm.$set(_vm.product, "description", $event.target.value)
                 }
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "" } }, [_vm._v("Letra")]),
+              })
+            ]),
             _vm._v(" "),
-            _c("textarea", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.product.lyrics,
-                  expression: "product.lyrics"
-                }
-              ],
-              staticClass: "form-control border-0",
-              attrs: { name: "lyrics", placeholder: "Letra de la canción..." },
-              domProps: { value: _vm.product.lyrics },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", { attrs: { for: "" } }, [_vm._v("Descripción")]),
+              _vm._v(" "),
+              _c("textarea", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.product.description,
+                    expression: "product.description"
                   }
-                  _vm.$set(_vm.product, "lyrics", $event.target.value)
-                }
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", [_vm._v("Precio")]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.product.price,
-                  expression: "product.price"
-                }
-              ],
-              staticClass: "form-control border-0",
-              attrs: {
-                type: "number",
-                name: "price",
-                placeholder: "Precio de la canción..."
-              },
-              domProps: { value: _vm.product.price },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
+                ],
+                staticClass: "form-control border-0",
+                attrs: { placeholder: "Descripción...", name: "description" },
+                domProps: { value: _vm.product.description },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.product, "description", $event.target.value)
                   }
-                  _vm.$set(_vm.product, "price", $event.target.value)
                 }
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", [_vm._v("Cargar archivo")]),
+              })
+            ]),
             _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control border-0",
-              attrs: { type: "file", name: "file", placeholder: "Archivo..." },
-              on: { change: _vm.onFileSelected }
-            })
-          ]),
-          _vm._v(" "),
-          _vm._m(0)
-        ]
-      )
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", { attrs: { for: "" } }, [_vm._v("Letra")]),
+              _vm._v(" "),
+              _c("textarea", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.product.lyrics,
+                    expression: "product.lyrics"
+                  }
+                ],
+                staticClass: "form-control border-0",
+                attrs: {
+                  name: "lyrics",
+                  placeholder: "Letra de la canción..."
+                },
+                domProps: { value: _vm.product.lyrics },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.product, "lyrics", $event.target.value)
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", [_vm._v("Precio")]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.product.price,
+                    expression: "product.price"
+                  }
+                ],
+                staticClass: "form-control border-0",
+                attrs: {
+                  type: "number",
+                  name: "price",
+                  placeholder: "Precio de la canción..."
+                },
+                domProps: { value: _vm.product.price },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.product, "price", $event.target.value)
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", [_vm._v("Cargar archivo")]),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "form-control border-0",
+                attrs: {
+                  type: "file",
+                  name: "file",
+                  placeholder: "Archivo..."
+                },
+                on: { change: _vm.onFileSelected }
+              })
+            ]),
+            _vm._v(" "),
+            _vm._m(0)
+          ]
+        )
+      ])
     ])
   ])
 }

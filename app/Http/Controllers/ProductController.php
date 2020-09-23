@@ -28,7 +28,13 @@ class ProductController extends Controller
             'title' => 'unique:products,title|required',
             'description' => 'required',
             'file' => 'required|file|mimes:mpga,mp2,mp2a,mp3,m2a,m3a',
-            'price' => 'required|Numeric'
+            'price' => 'required|numeric'
+        ], [
+            'required' => 'El campo es requerido',
+            'unique' => 'El :atributte ya existe en la base de datos',
+            'numeric' => 'El campo debe ser númerico',
+            'file' => 'El campo debe contener un archivo',
+            'mimes' => 'El :attribute no tiene un formato valido'
         ]);
     }
 }
