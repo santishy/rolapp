@@ -4,7 +4,7 @@
             <h5 class="card-title">{{message}}</h5>
             <ul>
                 <li>
-                    <strong>Título:<strong> {{product.title}}
+                    <strong>Título:</strong> {{product.title}}
                 </li>
                 <li>
                     <strong>Descripcion:</strong> 
@@ -18,7 +18,7 @@
                     <strong>Precio:</strong> {{product.formatted_price}}
                 </li>
                 <li>
-                    <strong>Audio:</strong> Pending
+                    <strong>Audio:</strong> {{product.file}}
                 </li>
             </ul>
         </div>

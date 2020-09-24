@@ -7,6 +7,7 @@
         </li>
       </ul>
     </div>
+    <show-product v-if="show" :product="product"></show-product>
     <div class="card border-0 shadow-sm">
       <div class="card-body">
         <h5 class="card-title text-center">{{getTitle}}</h5>
@@ -80,6 +81,7 @@ export default {
       product: {},
       fileSelected: null,
       errors: null,
+      show:false,
     };
   },
   props: {
@@ -100,7 +102,9 @@ export default {
         .post(`/products/store`, fd)
         .then((res) => {
           this.errors = null;
-          
+          this.product = res.data.data;
+          console.log(res.data.data)
+          this.show = true;
         })
         .catch((err) => {
           this.errors = Object.values(err.response.data.errors).flat();

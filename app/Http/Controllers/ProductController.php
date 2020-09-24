@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Resources\ProductResource;
 
 class ProductController extends Controller
 {
-    public function index(){
+    /*public function index(){
         return ProductResource::collection(Product::all()-)
-    }
+    }*/
     public function create()
     {
         return view('dashboard.products.create');
@@ -25,9 +26,7 @@ class ProductController extends Controller
         // }
         $this->validateProduct($request);
         $request->file = $request->file->store('songs');
-        return response()->json([
-            'product' =>  Product::create($request->all())
-        ]);
+        return ProductResource::make(Product::create($request->all()));
     }
 
     public function validateProduct($request)
