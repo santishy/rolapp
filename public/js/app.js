@@ -1974,6 +1974,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1987,7 +1996,8 @@ __webpack_require__.r(__webpack_exports__);
       type: String
     },
     method: {
-      type: String
+      type: String,
+      required: true
     }
   },
   methods: {
@@ -1995,16 +2005,25 @@ __webpack_require__.r(__webpack_exports__);
     submit: function submit() {
       var _this = this;
 
-      var fd = new FormData(document.getElementById('formProduct'));
-      fd.append('file', this.fileSelected);
+      var fd = new FormData(document.getElementById("formProduct"));
+      fd.append("file", this.fileSelected);
       axios.post("/products/store", fd).then(function (res) {
-        console.log(res);
+        _this.errors = null;
       })["catch"](function (err) {
-        _this.errors = err.response.data.errors;
+        _this.errors = Object.values(err.response.data.errors).flat();
       });
     },
     onFileSelected: function onFileSelected(event) {
       this.fileSelected = event.target.files[0];
+    }
+  },
+  computed: {
+    getTitle: function getTitle() {
+      if (this.method == "POST") {
+        return "Crear Producto";
+      }
+
+      return "Modificar producto";
     }
   }
 });
@@ -37594,10 +37613,31 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "alert alert-danger", attrs: { role: "alert" } }),
+    _vm.errors
+      ? _c(
+          "div",
+          { staticClass: "alert alert-danger", attrs: { role: "alert" } },
+          [
+            _c(
+              "ul",
+              { staticClass: "py-0 my-0" },
+              _vm._l(_vm.errors, function(value, key, index) {
+                return _c("li", { key: index }, [
+                  _vm._v("\n        " + _vm._s(value) + "\n      ")
+                ])
+              }),
+              0
+            )
+          ]
+        )
+      : _vm._e(),
     _vm._v(" "),
     _c("div", { staticClass: "card border-0 shadow-sm" }, [
       _c("div", { staticClass: "card-body" }, [
+        _c("h5", { staticClass: "card-title text-center" }, [
+          _vm._v(_vm._s(_vm.getTitle))
+        ]),
+        _vm._v(" "),
         _c(
           "form",
           {
@@ -37654,7 +37694,11 @@ var render = function() {
                   }
                 ],
                 staticClass: "form-control border-0",
-                attrs: { placeholder: "Descripción...", name: "description" },
+                attrs: {
+                  placeholder: "Descripción...",
+                  name: "description",
+                  required: ""
+                },
                 domProps: { value: _vm.product.description },
                 on: {
                   input: function($event) {
@@ -37682,7 +37726,8 @@ var render = function() {
                 staticClass: "form-control border-0",
                 attrs: {
                   name: "lyrics",
-                  placeholder: "Letra de la canción..."
+                  rows: "5",
+                  placeholder: "Letra de la canción... (Dato opcional)"
                 },
                 domProps: { value: _vm.product.lyrics },
                 on: {
@@ -37712,7 +37757,8 @@ var render = function() {
                 attrs: {
                   type: "number",
                   name: "price",
-                  placeholder: "Precio de la canción..."
+                  placeholder: "Precio de la canción...",
+                  required: ""
                 },
                 domProps: { value: _vm.product.price },
                 on: {
@@ -37734,7 +37780,8 @@ var render = function() {
                 attrs: {
                   type: "file",
                   name: "file",
-                  placeholder: "Archivo..."
+                  placeholder: "Archivo...",
+                  required: ""
                 },
                 on: { change: _vm.onFileSelected }
               })
@@ -50097,8 +50144,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\laragon\www\rolapp\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\laragon\www\rolapp\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/vagrant/code/rolapp/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/vagrant/code/rolapp/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

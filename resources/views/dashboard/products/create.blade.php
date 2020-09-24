@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row d-flex justify-content-center">
             <div class="col-md-6">
-                <form-product></form-product>
+                <form-product method="POST"></form-product>
             </div>
         </div>
     </div>

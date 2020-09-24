@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
+    public function index(){
+        return ProductResource::collection(Product::all()-)
+    }
     public function create()
     {
         return view('dashboard.products.create');
@@ -15,6 +18,11 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
+        // if(!$request->hasFile('file')){
+        //     return response()->json([
+        //         'errors' => ['file' => 'El archivo es requerido'] 
+        //     ],422);
+        // }
         $this->validateProduct($request);
         $request->file = $request->file->store('songs');
         return response()->json([
@@ -30,11 +38,14 @@ class ProductController extends Controller
             'file' => 'required|file|mimes:mpga,mp2,mp2a,mp3,m2a,m3a',
             'price' => 'required|numeric'
         ], [
-            'required' => 'El campo es requerido',
-            'unique' => 'El :atributte ya existe en la base de datos',
-            'numeric' => 'El campo debe ser númerico',
-            'file' => 'El campo debe contener un archivo',
-            'mimes' => 'El :attribute no tiene un formato valido'
+            'description.required' => 'La descripción es requerida',
+            'file.required' => 'El archivo de audio es requerido',
+            'title.required' => 'El titulo es requerido',
+            'title.unique' => 'El título ya existe en la base de datos',
+            'price.required' => 'El precio es requerido',
+            'price.numeric' => 'El precio debe ser un valor númerico',
+            'file.file' => 'El archivo de audio debe ser archivo',
+            'file.mimes' => 'El archivo no tiene un formato valido'
         ]);
     }
 }
