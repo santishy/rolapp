@@ -37919,7 +37919,15 @@ var render = function() {
         _vm._v(" "),
         _c("li", [
           _c("strong", [_vm._v("Audio:")]),
-          _vm._v(" " + _vm._s(_vm.product.file) + "\n            ")
+          _vm._v(" "),
+          _c("audio", {
+            attrs: {
+              src: _vm.product.file_uri,
+              type: "audio/mpeg",
+              preload: "none",
+              controls: ""
+            }
+          })
         ])
       ])
     ])
@@ -50334,8 +50342,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\laragon\www\rolapp\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\laragon\www\rolapp\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/vagrant/code/rolapp/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/vagrant/code/rolapp/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

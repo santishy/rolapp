@@ -21,7 +21,7 @@ class ProductResource extends JsonResource
             'lyrics' => $this->lyrics,
             'price' => $this->price,
             'formatted_price' => "$".number_format($this->price,2),
-            'file' => pathinfo($this->file)   
+            'file_uri' => $this->file
         ];
     }
 }
