@@ -1899,6 +1899,136 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/audio/ControlsComponent.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/audio/ControlsComponent.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      audio: document.getElementById("audio")
+    };
+  },
+  props: {
+    file_uri: {
+      type: String,
+      required: true
+    }
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    this.audio = document.getElementById("audio");
+    this.audio.volume = document.getElementById("volume").value;
+
+    this.audio.ontimeupdate = function () {
+      var time = document.getElementById("time");
+      time.max = _this.audio.duration;
+      time.value = _this.audio.currentTime;
+    };
+  },
+  methods: {
+    play: function play() {
+      this.audio.play();
+    },
+    pause: function pause() {
+      this.audio.pause();
+    },
+    stop: function stop() {
+      this.audio.load();
+    },
+    volume: function volume(e) {
+      this.audio.volume = e.target.value;
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/products/FormProduct.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/dashboard/products/FormProduct.vue?vue&type=script&lang=js& ***!
@@ -1908,6 +2038,8 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -2044,6 +2176,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -37648,119 +37782,6 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/index.js?!./resources/js/components/audio/ControlsComponent.vue?vue&type=script&lang=ts&":
-/*!****************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/audio/ControlsComponent.vue?vue&type=script&lang=ts& ***!
-  \****************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    props: {
-        file_uri: {
-            type: String,
-            required: true
-        },
-    },
-    data(){
-        return{
-            audio:document.getElementById('audio'),
-        }
-    },
-    created(){
-        this.audio = document.getElementById('audio');
-        this.audio.volume = document.getElementById('volume').value;
-
-    },
-    methods:{
-        play(){
-            this.audio.play();
-        },
-        pause(){
-            this.audio.pause();
-        },
-        stop(){
-            this.audio.load();
-        },
-        volume(e){
-            this.audio.volume = e.target.value
-        }
-    }
-
-});
-
-
-/***/ }),
-
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/audio/ControlsComponent.vue?vue&type=template&id=52856953&":
 /*!**************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/audio/ControlsComponent.vue?vue&type=template&id=52856953& ***!
@@ -37777,116 +37798,151 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("audio", { attrs: { src: _vm.file_uri, id: "audio" } }),
+    _c("audio", {
+      attrs: { src: _vm.file_uri, id: "audio", type: "audio/mpeg" }
+    }),
     _vm._v(" "),
     _c("div", { attrs: { id: "controls" } }, [
+      _vm._m(0),
+      _vm._v(" "),
       _c(
-        "button",
-        { staticClass: "btn btn-default", on: { click: _vm.play } },
+        "div",
+        { staticClass: "d-flex justify-content-center align-items-center" },
         [
           _c(
-            "svg",
-            {
-              staticClass: "bi bi-play",
-              attrs: {
-                width: "1em",
-                height: "1em",
-                viewBox: "0 0 16 16",
-                fill: "currentColor",
-                xmlns: "http://www.w3.org/2000/svg"
-              }
-            },
+            "button",
+            { staticClass: "btn btn-default btn-xs", on: { click: _vm.play } },
             [
-              _c("path", {
+              _c(
+                "svg",
+                {
+                  staticClass: "bi bi-play",
+                  attrs: {
+                    width: "1em",
+                    height: "1em",
+                    viewBox: "0 0 16 16",
+                    fill: "currentColor",
+                    xmlns: "http://www.w3.org/2000/svg"
+                  }
+                },
+                [
+                  _c("path", {
+                    attrs: {
+                      "fill-rule": "evenodd",
+                      d:
+                        "M10.804 8L5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"
+                    }
+                  })
+                ]
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            { staticClass: "btn btn-default btn-xs", on: { click: _vm.pause } },
+            [
+              _c(
+                "svg",
+                {
+                  staticClass: "bi bi-pause",
+                  attrs: {
+                    width: "1em",
+                    height: "1em",
+                    viewBox: "0 0 16 16",
+                    fill: "currentColor",
+                    xmlns: "http://www.w3.org/2000/svg"
+                  }
+                },
+                [
+                  _c("path", {
+                    attrs: {
+                      "fill-rule": "evenodd",
+                      d:
+                        "M6 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5zm4 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5z"
+                    }
+                  })
+                ]
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            { staticClass: "btn btn-default btn-xs", on: { click: _vm.stop } },
+            [
+              _c(
+                "svg",
+                {
+                  staticClass: "bi bi-stop",
+                  attrs: {
+                    width: "1em",
+                    height: "1em",
+                    viewBox: "0 0 16 16",
+                    fill: "currentColor",
+                    xmlns: "http://www.w3.org/2000/svg"
+                  }
+                },
+                [
+                  _c("path", {
+                    attrs: {
+                      "fill-rule": "evenodd",
+                      d:
+                        "M3.5 5A1.5 1.5 0 0 1 5 3.5h6A1.5 1.5 0 0 1 12.5 5v6a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 11V5zM5 4.5a.5.5 0 0 0-.5.5v6a.5.5 0 0 0 .5.5h6a.5.5 0 0 0 .5-.5V5a.5.5 0 0 0-.5-.5H5z"
+                    }
+                  })
+                ]
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "form-group mb-0 d-flex justify-content-center" },
+            [
+              _c("label", { staticClass: "mb-0", attrs: { for: "valume" } }, [
+                _vm._v("Volumen")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "form-control-range",
                 attrs: {
-                  "fill-rule": "evenodd",
-                  d:
-                    "M10.804 8L5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"
-                }
+                  type: "range",
+                  id: "volume",
+                  step: ".1",
+                  max: "1",
+                  min: "0",
+                  value: "1"
+                },
+                on: { change: _vm.volume }
               })
             ]
           )
         ]
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        { staticClass: "btn btn-default", on: { click: _vm.pause } },
-        [
-          _c(
-            "svg",
-            {
-              staticClass: "bi bi-pause",
-              attrs: {
-                width: "1em",
-                height: "1em",
-                viewBox: "0 0 16 16",
-                fill: "currentColor",
-                xmlns: "http://www.w3.org/2000/svg"
-              }
-            },
-            [
-              _c("path", {
-                attrs: {
-                  "fill-rule": "evenodd",
-                  d:
-                    "M6 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5zm4 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5z"
-                }
-              })
-            ]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        { staticClass: "btn btn-default", on: { click: _vm.stop } },
-        [
-          _c(
-            "svg",
-            {
-              staticClass: "bi bi-stop",
-              attrs: {
-                width: "1em",
-                height: "1em",
-                viewBox: "0 0 16 16",
-                fill: "currentColor",
-                xmlns: "http://www.w3.org/2000/svg"
-              }
-            },
-            [
-              _c("path", {
-                attrs: {
-                  "fill-rule": "evenodd",
-                  d:
-                    "M3.5 5A1.5 1.5 0 0 1 5 3.5h6A1.5 1.5 0 0 1 12.5 5v6a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 11V5zM5 4.5a.5.5 0 0 0-.5.5v6a.5.5 0 0 0 .5.5h6a.5.5 0 0 0 .5-.5V5a.5.5 0 0 0-.5-.5H5z"
-                }
-              })
-            ]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "form-group" }, [
-        _c("label", { attrs: { for: "valume" } }, [_vm._v("Volumen")]),
-        _vm._v(" "),
-        _c("input", {
-          staticClass: "form-control-range",
-          attrs: {
-            type: "range",
-            id: "volume",
-            step: ".1",
-            max: "1",
-            min: "0",
-            value: "1"
-          },
-          on: { change: _vm.volume }
-        })
-      ])
+      )
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group mb-0" }, [
+      _c("input", {
+        staticClass: "form-control-range",
+        attrs: {
+          type: "range",
+          id: "time",
+          step: ".1",
+          max: "1",
+          min: "0",
+          value: "0"
+        }
+      })
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -37921,7 +37977,9 @@ var render = function() {
                 { staticClass: "py-0 my-0" },
                 _vm._l(_vm.errors, function(value, key, index) {
                   return _c("li", { key: index }, [
-                    _vm._v("\n        " + _vm._s(value) + "\n      ")
+                    _vm._v(
+                      "\n                " + _vm._s(value) + "\n            "
+                    )
                   ])
                 }),
                 0
@@ -38105,7 +38163,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "form-group" }, [
       _c("button", { staticClass: "btn btn-block btn-primary" }, [
-        _vm._v("Guardar")
+        _vm._v("\n                        Guardar\n                    ")
       ])
     ])
   }
@@ -38131,47 +38189,45 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "card border-0 shadow-sm" }, [
-    _c("div", { staticClass: "card-body" }, [
-      _c("h5", { staticClass: "card-title" }, [_vm._v(_vm._s(_vm.message))]),
+  return _c("div", { staticClass: "card border-0 shadow-sm mb-2" }, [
+    _c("ul", { staticClass: "list-group" }, [
+      _c("li", { staticClass: "list-group-item" }, [
+        _c("strong", [_vm._v("Título:")]),
+        _vm._v(" " + _vm._s(_vm.product.title) + "\n        ")
+      ]),
       _vm._v(" "),
-      _c("ul", [
-        _c("li", [
-          _c("strong", [_vm._v("Título:")]),
-          _vm._v(" " + _vm._s(_vm.product.title) + "\n            ")
-        ]),
-        _vm._v(" "),
-        _c("li", [
+      _c("li", { staticClass: "list-group-item" }, [
+        _c("p", { staticClass: "card-text" }, [
           _c("strong", [_vm._v("Descripcion:")]),
-          _vm._v(" "),
-          _c("p", { staticClass: "card-text" }, [
-            _vm._v(_vm._s(_vm.product.description))
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", [
+          _vm._v(" " + _vm._s(_vm.product.description) + "\n            ")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("li", { staticClass: "list-group-item" }, [
+        _c("p", { staticClass: "card-text" }, [
           _c("strong", [_vm._v("Letra:")]),
+          _vm._v(" " + _vm._s(_vm.product.lyrics) + "\n            ")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("li", { staticClass: "list-group-item" }, [
+        _c("strong", [_vm._v("Precio:")]),
+        _vm._v(" " + _vm._s(_vm.product.formatted_price) + "\n        ")
+      ]),
+      _vm._v(" "),
+      _c(
+        "li",
+        {
+          staticClass:
+            "list-group-item d-flex align-items-center justify-content-between"
+        },
+        [
+          _c("strong", [_vm._v("Audio:")]),
           _vm._v(" "),
-          _c("p", { staticClass: "card-text" }, [
-            _vm._v(_vm._s(_vm.product.lyrics))
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("strong", [_vm._v("Precio:")]),
-          _vm._v(" " + _vm._s(_vm.product.formatted_price) + "\n            ")
-        ]),
-        _vm._v(" "),
-        _c(
-          "li",
-          [
-            _c("strong", [_vm._v("Audio:")]),
-            _vm._v(" "),
-            _c("controls-audio", { attrs: { file_uri: _vm.product.file_uri } })
-          ],
-          1
-        )
-      ])
+          _c("controls-audio", { attrs: { file_uri: _vm.product.file_uri } })
+        ],
+        1
+      )
     ])
   ])
 }
@@ -50439,7 +50495,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ControlsComponent_vue_vue_type_template_id_52856953___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ControlsComponent.vue?vue&type=template&id=52856953& */ "./resources/js/components/audio/ControlsComponent.vue?vue&type=template&id=52856953&");
-/* harmony import */ var _ControlsComponent_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ControlsComponent.vue?vue&type=script&lang=ts& */ "./resources/js/components/audio/ControlsComponent.vue?vue&type=script&lang=ts&");
+/* harmony import */ var _ControlsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ControlsComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/audio/ControlsComponent.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -50449,7 +50505,7 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _ControlsComponent_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ControlsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _ControlsComponent_vue_vue_type_template_id_52856953___WEBPACK_IMPORTED_MODULE_0__["render"],
   _ControlsComponent_vue_vue_type_template_id_52856953___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -50466,17 +50522,17 @@ component.options.__file = "resources/js/components/audio/ControlsComponent.vue"
 
 /***/ }),
 
-/***/ "./resources/js/components/audio/ControlsComponent.vue?vue&type=script&lang=ts&":
+/***/ "./resources/js/components/audio/ControlsComponent.vue?vue&type=script&lang=js&":
 /*!**************************************************************************************!*\
-  !*** ./resources/js/components/audio/ControlsComponent.vue?vue&type=script&lang=ts& ***!
+  !*** ./resources/js/components/audio/ControlsComponent.vue?vue&type=script&lang=js& ***!
   \**************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_index_js_vue_loader_options_ControlsComponent_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib??vue-loader-options!./ControlsComponent.vue?vue&type=script&lang=ts& */ "./node_modules/vue-loader/lib/index.js?!./resources/js/components/audio/ControlsComponent.vue?vue&type=script&lang=ts&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_vue_loader_lib_index_js_vue_loader_options_ControlsComponent_vue_vue_type_script_lang_ts___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ControlsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./ControlsComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/audio/ControlsComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ControlsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -50654,8 +50710,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\laragon\www\rolapp\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\laragon\www\rolapp\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/vagrant/code/rolapp/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/vagrant/code/rolapp/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
