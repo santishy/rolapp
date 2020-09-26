@@ -27,7 +27,7 @@ class ProductController extends Controller
         $this->validateProduct($request);
         return ProductResource::make(Product::create(
             array_merge($request->all(),[
-                'file' => url(request()->file('file')->storeAs('songs', $request->file->getClientOriginalName()))
+                'file' => request()->file('file')->storeAs('public/songs', $request->file->getClientOriginalName())
             ])
         ));
     }

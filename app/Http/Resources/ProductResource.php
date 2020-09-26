@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Storage;
 
 class ProductResource extends JsonResource
 {
@@ -21,7 +22,7 @@ class ProductResource extends JsonResource
             'lyrics' => $this->lyrics,
             'price' => $this->price,
             'formatted_price' => "$".number_format($this->price,2),
-            'file_uri' => $this->file
+            'file_uri' =>  Storage::url($this->file)
         ];
     }
 }

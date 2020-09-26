@@ -18,7 +18,7 @@
                     <strong>Precio:</strong> {{product.formatted_price}}
                 </li>
                 <li>
-                    <strong>Audio:</strong> <audio :src="product.file_uri" type="audio/mpeg" preload="none" controls></audio> 
+                    <strong>Audio:</strong> <controls-audio :file_uri="product.file_uri"></controls-audio> 
                 </li>
             </ul>
         </div>

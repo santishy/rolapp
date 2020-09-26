@@ -21,6 +21,7 @@ window.Vue = require('vue');
 
 Vue.component('form-product', require('./components/dashboard/products/FormProduct.vue').default);
 Vue.component('show-product',require('./components/dashboard/products/ShowComponent.vue').default);
+Vue.component('controls-audio',require('./components/audio/ControlsComponent.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
