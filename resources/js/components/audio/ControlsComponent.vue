@@ -57,6 +57,7 @@
                     step=".1"
                     max="1"
                     min="0"
+                    value="1"
                 />
             </div>
         </div>

@@ -37723,6 +37723,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: {
         file_uri: {
@@ -37876,7 +37877,8 @@ var render = function() {
             id: "volume",
             step: ".1",
             max: "1",
-            min: "0"
+            min: "0",
+            value: "1"
           },
           on: { change: _vm.volume }
         })
