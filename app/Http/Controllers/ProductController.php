@@ -9,9 +9,14 @@ use App\Http\Resources\ProductResource;
 
 class ProductController extends Controller
 {
-    /*public function index(){
-        return ProductResource::collection(Product::all()-)
-    }*/
+    public function index(){
+        if(request()->isJson())
+        {
+            return ProductResource::collection(Product::all()->orderByDesc('id')->paginate(15));
+        }
+        return view('dash');
+        
+    }
     public function create()
     {
         return view('dashboard.products.create');

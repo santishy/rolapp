@@ -4,10 +4,10 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+import './bootstrap';
 
 window.Vue = require('vue');
-
+window.EventBus = new Vue();
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -21,6 +21,7 @@ window.Vue = require('vue');
 
 Vue.component('form-product', require('./components/dashboard/products/FormProduct.vue').default);
 Vue.component('show-product',require('./components/dashboard/products/ShowComponent.vue').default);
+Vue.component('products-container',require('./components/dashboard/products/ProductsContainerComponent.vue').default);
 Vue.component('controls-audio',require('./components/audio/ControlsComponent.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to

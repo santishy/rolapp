@@ -1,5 +1,5 @@
 <template>
-    <div class="card border-0 shadow-sm mb-2">
+    <div v-if="product" class="card border-0 shadow-sm mb-2">
         <ul class="list-group">
             <li class="list-group-item">
                 <strong>Título:</strong> {{ product.title }}
@@ -28,10 +28,17 @@
 </template>
 <script>
 export default {
-    props: {
-        product: {
-            type: Object,
-            required: true
+    data(){
+        return {
+            product:null,
+        }
+    },
+    created(){
+        EventBus.$on('product-created',this.setProduct)
+    },
+    methods:{
+        setProduct(product){
+            this.product = product;
         }
     }
 };

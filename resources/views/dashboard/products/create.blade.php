@@ -5,6 +5,9 @@
             <div class="col-md-6">
                 <form-product method="POST"></form-product>
             </div>
+            <div class="col-md-4">
+                <show-product></show-product>
+            </div>
         </div>
     </div>
 @endsection
