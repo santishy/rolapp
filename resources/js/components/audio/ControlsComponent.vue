@@ -14,7 +14,7 @@
                 />
             </div>
             <div class="d-flex justify-content-center align-items-center">
-                <button class="btn btn-default btn-xs" @click="play">
+                <button class="btn btn-default btn-xs" type="button" @click="play">
                     <svg
                         width="1em"
                         height="1em"
@@ -29,7 +29,7 @@
                         />
                     </svg>
                 </button>
-                <button class="btn btn-default btn-xs" @click="pause">
+                <button class="btn btn-default btn-xs" type="button" @click="pause">
                     <svg
                         width="1em"
                         height="1em"
@@ -44,7 +44,7 @@
                         />
                     </svg>
                 </button>
-                <button class="btn btn-default btn-xs" @click="stop">
+                <button class="btn btn-default btn-xs" type="button" @click="stop">
                     <svg
                         width="1em"
                         height="1em"

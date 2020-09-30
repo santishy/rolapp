@@ -18,7 +18,7 @@
                             placeholder="Escribe el título"
                             class="form-control border-0"
                             name="title"
-                            v-model="product.title"
+                            v-model="localProduct.title"
                             required
                         />
                     </div>
@@ -27,7 +27,7 @@
                         <textarea
                             class="form-control border-0"
                             placeholder="Descripción..."
-                            v-model="product.description"
+                            v-model="localProduct.description"
                             name="description"
                             required
                         ></textarea>
@@ -37,7 +37,7 @@
                         <textarea
                             class="form-control border-0"
                             name="lyrics"
-                            v-model="product.lyrics"
+                            v-model="localProduct.lyrics"
                             rows="5"
                             placeholder="Letra de la canción... (Dato opcional)"
                         ></textarea>
@@ -48,12 +48,16 @@
                             type="number"
                             class="form-control border-0"
                             name="price"
-                            v-model="product.price"
+                            v-model="localProduct.price"
                             placeholder="Precio de la canción..."
                             required
                         />
                     </div>
                     <div class="form-group">
+                        <controls-audio
+                            v-if="file_uri"
+                            :file_uri="file_uri"
+                        ></controls-audio>
                         <label>Cargar archivo</label>
                         <input
                             type="file"
@@ -61,7 +65,6 @@
                             name="file"
                             @change="onFileSelected"
                             placeholder="Archivo..."
-                            required
                         />
                     </div>
                     <div class="form-group">
@@ -79,10 +82,18 @@
 export default {
     data() {
         return {
-            product: {},
+            localProduct: {},
             fileSelected: null,
             errors: null,
+            file_uri: null
         };
+    },
+    mounted() {
+        if (!!this.product) {
+            console.log(this.product);
+            this.localProduct = this.product;
+            this.file_uri = this.product.file_uri;
+        }
     },
     props: {
         url: {
@@ -91,21 +102,26 @@ export default {
         method: {
             type: String,
             required: true
+        },
+        product: {
+            type: Object
         }
     },
     methods: {
         // Crear producto, se envia al backend  productController->store()
         submit() {
             let fd = new FormData(document.getElementById("formProduct"));
+
             fd.append("file", this.fileSelected);
-            axios
-                .post(`/products/store`, fd)
+
+            console.log(this.method);
+            axios[this.method](this.url, fd)
                 .then(res => {
                     this.errors = null;
-                    this.product = null;
-                    this.fileSelected=null,
-                    this.product = res.data.data;
-                    EventBus.$emit('product-created',this.product);
+                    this.localProduct = null;
+                    this.fileSelected = null;
+                    this.localProduct = res.data.data;
+                    EventBus.$emit("product-created", this.localProduct);
                 })
                 .catch(err => {
                     this.errors = Object.values(

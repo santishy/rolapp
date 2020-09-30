@@ -39,6 +39,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                               <a class="dropdown-item" href="{{route('products.create')}}">Agregar</a>
+                              <a href="{{route('products.index')}}" class="dropdown-item">Ver todos</a>
                             </div>
                         </li>
                     </ul>

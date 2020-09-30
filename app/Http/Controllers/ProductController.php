@@ -10,11 +10,11 @@ use App\Http\Resources\ProductResource;
 class ProductController extends Controller
 {
     public function index(){
-        if(request()->isJson())
+        if(request()->wantsJson())
         {
-            return ProductResource::collection(Product::all()->orderByDesc('id')->paginate(15));
+            return ProductResource::collection(Product::orderByDesc('id')->paginate(5));
         }
-        return view('dash');
+        return view('dashboard.products.index');
         
     }
     public function create()
@@ -37,12 +37,23 @@ class ProductController extends Controller
         ));
     }
 
+    public function edit(Product $product){
+        return view('dashboard.products.edit',['product' => ProductResource::make($product)]);
+    }
+    public function update(Request $request,Product $product){
+        return $request->all();
+        $request->all()['id'] = $product->id;
+        $this->validateProduct($request);
+        $product->update($request->all());
+
+    }
     public function validateProduct($request)
     {
         return $request->validate([
-            'title' => 'unique:products,title|required',
+            'title' => $request->id 
+                ? "unique:products,title,$request->id|required" : 'unique:products,title|required',
             'description' => 'required',
-            'file' => 'required|file|mimes:mpga,mp2,mp2a,mp3,m2a,m3a',
+            'file' => $request->hasFile('file') ? 'required|file|mimes:mpga,mp2,mp2a,mp3,m2a,m3a' : '',
             'price' => 'required|numeric'
         ], [
             'description.required' => 'La descripción es requerida',

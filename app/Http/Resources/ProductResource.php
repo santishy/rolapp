@@ -22,7 +22,7 @@ class ProductResource extends JsonResource
             'lyrics' => $this->lyrics,
             'price' => $this->price,
             'formatted_price' => "$".number_format($this->price,2),
-            'file_uri' =>  Storage::url($this->file)
+            'file_uri' =>  Storage::url($this->file),
         ];
     }
 }

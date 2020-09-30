@@ -20,6 +20,9 @@ Auth::routes();
 Route::get('/products/create','ProductController@create')->name('products.create');
 Route::post('/products/store','ProductController@store')->name('products.store');
 Route::get('/products','ProductController@index')->name('products.index');
+Route::get('/products/{product}/edit','ProductController@edit')->name('products.edit');
+Route::put('/products/{product}','ProductController@update')->name('products.update');
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 

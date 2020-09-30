@@ -1,44 +1,74 @@
 <template>
-    <div v-if="product" class="card border-0 shadow-sm mb-2">
+    <div v-if="localProduct" class="card border-0 shadow-sm mb-2">
+        <div class="card-body">
+            <div class="d-flex justify-content-center">
+                <div
+                    class="btn-group btn-group-lg text-center mb-4"
+                    role="group"
+                    aria-label="Basic example"
+                >
+                    <a
+                        :href="`/products/${localProduct.id}/edit`"
+                        class="btn btn-primary"
+                        >Actualizar</a
+                    >
+                    <a
+                        :href="`/products/destroy/${localProduct.id}`"
+                        class="btn btn-danger"
+                        >Eliminar</a
+                    >
+                </div>
+            </div>
+            <h3 class="card-text text-center">{{ localProduct.title }}</h3>
+        </div>
         <ul class="list-group">
             <li class="list-group-item">
-                <strong>Título:</strong> {{ product.title }}
-            </li>
-            <li class="list-group-item">
                 <p class="card-text">
-                    <strong>Descripcion:</strong> {{ product.description }}
+                    <strong>Descripcion:</strong> {{ localProduct.description }}
                 </p>
             </li>
             <li class="list-group-item">
                 <p class="card-text">
-                    <strong>Letra:</strong> {{ product.lyrics }}
+                    <strong>Letra:</strong> {{ localProduct.lyrics }}
                 </p>
             </li>
             <li class="list-group-item">
-                <strong>Precio:</strong> {{ product.formatted_price }}
+                <strong>Precio:</strong> {{ localProduct.formatted_price }}
             </li>
             <li
                 class="list-group-item d-flex align-items-center justify-content-between"
             >
                 <strong>Audio:</strong>
-                <controls-audio :file_uri="product.file_uri"></controls-audio>
+                <controls-audio
+                    :file_uri="localProduct.file_uri"
+                ></controls-audio>
             </li>
         </ul>
     </div>
 </template>
 <script>
 export default {
-    data(){
-        return {
-            product:null,
+    props: {
+        product: {
+            type: Object
         }
     },
-    created(){
-        EventBus.$on('product-created',this.setProduct)
+    mounted() {
+        if (!!this.product) {
+            this.localProduct = this.product;
+        }
     },
-    methods:{
-        setProduct(product){
-            this.product = product;
+    data() {
+        return {
+            localProduct: null
+        };
+    },
+    created() {
+        EventBus.$on("product-created", this.setlocalProduct);
+    },
+    methods: {
+        setlocalProduct(product) {
+            this.localProduct = product;
         }
     }
 };
