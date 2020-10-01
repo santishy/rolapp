@@ -2,20 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\FileUpdated;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Resources\ProductResource;
 
+
 class ProductController extends Controller
 {
-    public function index(){
-        if(request()->wantsJson())
-        {
+    public function index()
+    {
+        if (request()->wantsJson()) {
             return ProductResource::collection(Product::orderByDesc('id')->paginate(5));
         }
         return view('dashboard.products.index');
-        
     }
     public function create()
     {
@@ -31,26 +32,36 @@ class ProductController extends Controller
         // }
         $this->validateProduct($request);
         return ProductResource::make(Product::create(
-            array_merge($request->all(),[
+            array_merge($request->all(), [
                 'file' => request()->file('file')->storeAs('public/songs', $request->file->getClientOriginalName())
             ])
         ));
     }
 
-    public function edit(Product $product){
-        return view('dashboard.products.edit',['product' => ProductResource::make($product)]);
+    public function edit(Product $product)
+    {
+        return view('dashboard.products.edit', ['product' => ProductResource::make($product)]);
     }
-    public function update(Request $request,Product $product){
-        return $request->all();
-        $request->all()['id'] = $product->id;
+    public function update(Request $request, Product $product)
+    {
+        $request->merge(['id' => $product->id]);
         $this->validateProduct($request);
-        $product->update($request->all());
-
+        if (request()->hasFile('file')) {
+            event(new FileUpdated($product->file));
+            return response()->json(
+                [
+                    'res' => $product->update($product->mergeRequest([
+                        'file' => $product->storeFile()
+                    ]))
+                ]
+            );
+        }
+        return response()->json(['res' => $product->update($request->all())]);
     }
     public function validateProduct($request)
     {
         return $request->validate([
-            'title' => $request->id 
+            'title' => $request->id
                 ? "unique:products,title,$request->id|required" : 'unique:products,title|required',
             'description' => 'required',
             'file' => $request->hasFile('file') ? 'required|file|mimes:mpga,mp2,mp2a,mp3,m2a,m3a' : '',

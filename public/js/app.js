@@ -2153,8 +2153,9 @@ __webpack_require__.r(__webpack_exports__);
 
       var fd = new FormData(document.getElementById("formProduct"));
       fd.append("file", this.fileSelected);
+      if (this.method == 'put') fd.append('_method', 'PUT');
       console.log(this.method);
-      axios[this.method](this.url, fd).then(function (res) {
+      axios['post'](this.url, fd).then(function (res) {
         _this.errors = null;
         _this.localProduct = null;
         _this.fileSelected = null;
@@ -51026,8 +51027,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\laragon\www\rolapp\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\laragon\www\rolapp\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/vagrant/code/rolapp/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/vagrant/code/rolapp/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
