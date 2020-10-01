@@ -2207,7 +2207,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2235,9 +2234,13 @@ __webpack_require__.r(__webpack_exports__);
       axios.get("/products", {
         params: {
           page: this.page
+        },
+        headers: {
+          "Content-Type": "application/json"
         }
       }).then(function (res) {
         if (res.data.data.length) {
+          console.log(res.data.data.length);
           _this2.page += 1;
 
           _this2.products.push(res.data.data);
@@ -38346,12 +38349,11 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c(
-        "div",
-        { staticClass: "d-flex flex-wrap justify-content-center" },
+  return _c("div", [
+    _c(
+      "div",
+      { staticClass: "d-flex flex-wrap justify-content-center" },
+      [
         _vm._l(_vm.products, function(product) {
           return _c("show-product", {
             key: product.id,
@@ -38359,16 +38361,12 @@ var render = function() {
             attrs: { product: product }
           })
         }),
-        1
-      ),
-      _vm._v(" "),
-      _c("infinite-loading", {
-        staticClass: "flex-shrink-1",
-        on: { infinite: _vm.infiniteHandler }
-      })
-    ],
-    1
-  )
+        _vm._v(" "),
+        _c("infinite-loading", { on: { infinite: _vm.infiniteHandler } })
+      ],
+      2
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -51027,8 +51025,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/vagrant/code/rolapp/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/vagrant/code/rolapp/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\laragon\www\rolapp\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\laragon\www\rolapp\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

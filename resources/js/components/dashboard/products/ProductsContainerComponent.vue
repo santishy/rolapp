@@ -8,10 +8,9 @@
                 class="mr-2"
             >
             </show-product>
+            <infinite-loading @infinite="infiniteHandler"></infinite-loading>
         </div>
-        <infinite-loading @infinite="infiniteHandler" class="flex-shrink-1"></infinite-loading>
     </div>
-   
 </template>
 <script>
 import InfiniteLoading from "vue-infinite-loading";
@@ -41,10 +40,14 @@ export default {
                 .get("/products", {
                     params: {
                         page: this.page
+                    },
+                    headers: {
+                        "Content-Type": "application/json"
                     }
                 })
                 .then(res => {
                     if (res.data.data.length) {
+                        console.log(res.data.data.length);
                         this.page += 1;
                         this.products.push(res.data.data);
                         $state.loaded();

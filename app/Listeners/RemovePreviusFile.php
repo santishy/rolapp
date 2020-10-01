@@ -28,6 +28,6 @@ class RemovePreviusFile
      */
     public function handle(FileUpdated $event)
     {
-        Storage::delete($event->file_uri);
+        Storage::delete(Storage::delete($event->file_uri));
     }
 }
