@@ -25,6 +25,7 @@ export default {
         InfiniteLoading
     },
     methods: {
+        
         infiniteHandler($state) {
             axios
                 .get(`/products`, {
