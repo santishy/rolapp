@@ -8,8 +8,8 @@
                 class="mr-2"
             >
             </show-product>
-            <infinite-loading @infinite="infiniteHandler"></infinite-loading>
         </div>
+        <infinite-loading @infinite="infiniteHandler"></infinite-loading>
     </div>
 </template>
 <script>
@@ -17,39 +17,26 @@ import InfiniteLoading from "vue-infinite-loading";
 export default {
     data() {
         return {
-            products: null,
+            products:[],
             page: 1
         };
     },
     components: {
         InfiniteLoading
     },
-    mounted() {
-        axios
-            .get("/products")
-            .then(res => {
-                this.products = res.data.data;
-            })
-            .catch(err => {
-                console.log(err.response.data);
-            });
-    },
     methods: {
         infiniteHandler($state) {
             axios
-                .get("/products", {
+                .get(`/products`, {
                     params: {
                         page: this.page
-                    },
-                    headers: {
-                        "Content-Type": "application/json"
                     }
                 })
                 .then(res => {
                     if (res.data.data.length) {
-                        console.log(res.data.data.length);
+                        console.log(res.data.data.length)
                         this.page += 1;
-                        this.products.push(res.data.data);
+                        this.products = this.products.concat(res.data.data);
                         $state.loaded();
                     } else {
                         $state.complete();

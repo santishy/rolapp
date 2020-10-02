@@ -12,9 +12,10 @@ use App\Http\Resources\ProductResource;
 class ProductController extends Controller
 {
     public function index()
-    {
-        if (request()->wantsJson()) {
-            return ProductResource::collection(Product::orderByDesc('id')->paginate(5));
+    {   
+        if(request()->wantsJson())
+        {
+            return ProductResource::collection(Product::orderByDesc('id')->paginate(3));
         }
         return view('dashboard.products.index');
     }

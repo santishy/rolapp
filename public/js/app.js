@@ -2154,7 +2154,6 @@ __webpack_require__.r(__webpack_exports__);
       var fd = new FormData(document.getElementById("formProduct"));
       fd.append("file", this.fileSelected);
       if (this.method == 'put') fd.append('_method', 'PUT');
-      console.log(this.method);
       axios['post'](this.url, fd).then(function (res) {
         _this.errors = null;
         _this.localProduct = null;
@@ -2211,40 +2210,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      products: null,
+      products: [],
       page: 1
     };
   },
   components: {
     InfiniteLoading: vue_infinite_loading__WEBPACK_IMPORTED_MODULE_0___default.a
   },
-  mounted: function mounted() {
-    var _this = this;
-
-    axios.get("/products").then(function (res) {
-      _this.products = res.data.data;
-    })["catch"](function (err) {
-      console.log(err.response.data);
-    });
-  },
   methods: {
     infiniteHandler: function infiniteHandler($state) {
-      var _this2 = this;
+      var _this = this;
 
       axios.get("/products", {
         params: {
           page: this.page
-        },
-        headers: {
-          "Content-Type": "application/json"
         }
       }).then(function (res) {
         if (res.data.data.length) {
           console.log(res.data.data.length);
-          _this2.page += 1;
-
-          _this2.products.push(res.data.data);
-
+          _this.page += 1;
+          _this.products = _this.products.concat(res.data.data);
           $state.loaded();
         } else {
           $state.complete();
@@ -38349,11 +38334,12 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "div",
-      { staticClass: "d-flex flex-wrap justify-content-center" },
-      [
+  return _c(
+    "div",
+    [
+      _c(
+        "div",
+        { staticClass: "d-flex flex-wrap justify-content-center" },
         _vm._l(_vm.products, function(product) {
           return _c("show-product", {
             key: product.id,
@@ -38361,12 +38347,13 @@ var render = function() {
             attrs: { product: product }
           })
         }),
-        _vm._v(" "),
-        _c("infinite-loading", { on: { infinite: _vm.infiniteHandler } })
-      ],
-      2
-    )
-  ])
+        1
+      ),
+      _vm._v(" "),
+      _c("infinite-loading", { on: { infinite: _vm.infiniteHandler } })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -51025,8 +51012,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\laragon\www\rolapp\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\laragon\www\rolapp\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/vagrant/code/rolapp/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/vagrant/code/rolapp/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

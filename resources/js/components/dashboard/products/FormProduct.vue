@@ -115,7 +115,6 @@ export default {
             fd.append("file", this.fileSelected);
             if(this.method == 'put')
                 fd.append('_method','PUT');
-            console.log(this.method);
             axios['post'](this.url, fd)
                 .then(res => {
                     this.errors = null;
