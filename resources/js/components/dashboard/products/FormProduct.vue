@@ -75,10 +75,12 @@
                 </form>
             </div>
         </div>
+         <notifications group="foo" />
     </div>
 </template>
 
 <script>
+
 export default {
     data() {
         return {
@@ -94,6 +96,7 @@ export default {
             this.localProduct = this.product;
             this.file_uri = this.product.file_uri;
         }
+       
     },
     props: {
         url: {
@@ -113,15 +116,21 @@ export default {
             let fd = new FormData(document.getElementById("formProduct"));
 
             fd.append("file", this.fileSelected);
-            if(this.method == 'put')
-                fd.append('_method','PUT');
-            axios['post'](this.url, fd)
+            if (this.method == "put") fd.append("_method", "PUT");
+            axios["post"](this.url, fd)
                 .then(res => {
                     this.errors = null;
                     this.localProduct = null;
                     this.fileSelected = null;
                     this.localProduct = res.data.data;
-                    EventBus.$emit("product-created", this.localProduct);
+                    if(this.method === 'post'){
+                        EventBus.$emit("product-created", this.localProduct);
+                        this.notification('Se creo correctamente','success','Productos')
+                    }
+                    else{
+                        this.notification('Actualizado correctamente','primary','Productos')
+                    }
+                    
                 })
                 .catch(err => {
                     this.errors = Object.values(
@@ -135,7 +144,7 @@ export default {
     },
     computed: {
         getTitle() {
-            if (this.method == "POST") {
+            if (this.method == "post") {
                 return "Crear Producto";
             }
             return "Modificar producto";

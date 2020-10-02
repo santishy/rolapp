@@ -2,14 +2,16 @@
     <div>
         <div class="d-flex flex-wrap justify-content-center">
             <show-product
-                v-for="product in products"
+                v-for="(product,index) in products"
                 :key="product.id"
                 :product="product"
                 class="mr-2"
+                :index=index
             >
             </show-product>
         </div>
         <infinite-loading @infinite="infiniteHandler"></infinite-loading>
+          <notifications group="foo" />
     </div>
 </template>
 <script>
@@ -20,6 +22,9 @@ export default {
             products:[],
             page: 1
         };
+    },
+    mounted(){
+        EventBus.$on('delete-product',this.removeProduct)
     },
     components: {
         InfiniteLoading
@@ -46,6 +51,9 @@ export default {
                 .catch(err => {
                     console.log(err.response.data);
                 });
+        },
+        removeProduct(index){
+            this.products.splice(index,1);
         }
     }
 };

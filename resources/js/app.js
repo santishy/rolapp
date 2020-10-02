@@ -6,6 +6,8 @@
 
 import './bootstrap';
 
+
+
 window.Vue = require('vue');
 window.EventBus = new Vue();
 /**
@@ -23,11 +25,16 @@ Vue.component('form-product', require('./components/dashboard/products/FormProdu
 Vue.component('show-product',require('./components/dashboard/products/ShowComponent.vue').default);
 Vue.component('products-container',require('./components/dashboard/products/ProductsContainerComponent.vue').default);
 Vue.component('controls-audio',require('./components/audio/ControlsComponent.vue').default);
+Vue.component('delete-button',require('./components/dashboard/products/DeleteButtonComponent.vue').default)
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+import Notifications from 'vue-notification';
+import notification from './mixins/notification.js'
+Vue.mixin(notification);
+Vue.use(Notifications)
 
 const app = new Vue({
     el: '#app',

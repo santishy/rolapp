@@ -78,4 +78,7 @@ class ProductController extends Controller
             'file.mimes' => 'El archivo no tiene un formato valido'
         ]);
     }
+    public function destroy(Product $product){
+        return response()->json(['data' => $product->delete()]);
+    }
 }

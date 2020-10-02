@@ -8,6 +8,7 @@
             <div class="col-md-4">
                 <show-product></show-product>
             </div>
+           
         </div>
     </div>
 @endsection
