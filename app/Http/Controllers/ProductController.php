@@ -11,6 +11,10 @@ use App\Http\Resources\ProductResource;
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {   
         if(request()->wantsJson())
@@ -79,6 +83,7 @@ class ProductController extends Controller
         ]);
     }
     public function destroy(Product $product){
+        event(new FileUpdated($product->file));
         return response()->json(['data' => $product->delete()]);
     }
 }
