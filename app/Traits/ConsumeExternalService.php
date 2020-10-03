@@ -17,6 +17,7 @@ trait ConsumeExternalService
         }
         $response = $client->request($method, $requestUrl, [
             $isJsonRequest ? 'json' : 'form_params' => $queryParams,
+            
             'headers' => $headers,
             'query' => $queryParams
         ]);
@@ -25,8 +26,6 @@ trait ConsumeExternalService
         if(method_exists($this,'decodeResponse')){
             $response = $this->decodeResponse($response);
         }
-        
-
         return $response;
     }
 }
