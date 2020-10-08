@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Paypal extends Model
 {
+    
     protected $baseUri;
     protected $clientId;
     protected $clientSecret;
