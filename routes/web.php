@@ -24,6 +24,11 @@ Route::get('/products/{product}/edit','ProductController@edit')->name('products.
 Route::put('/products/{product}','ProductController@update')->name('products.update');
 Route::delete('/products/{product}','ProductController@destroy')->name('products.destroy');
 
+//payments
+
+Route::post('/payments/pay','PaymentController@pay')->name('payments.pay');
+Route::get('/payments/approval','PaymentController@approval')->name('payments.approval');
+Route::get('/payments/cancelled','Paymentcontroller@cancelled')->name('payments.cancelled');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

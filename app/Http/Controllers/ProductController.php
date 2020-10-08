@@ -19,7 +19,7 @@ class ProductController extends Controller
     {   
         if(request()->wantsJson())
         {
-            return ProductResource::collection(Product::orderByDesc('id')->paginate(3));
+            return ProductResource::collection(Product::orderByDesc('id')->paginate(4));
         }
         return view('dashboard.products.index');
     }
