@@ -21,8 +21,8 @@
                 class="list-group-item d-flex align-items-center justify-content-between"
             >
                 <strong>Audio:</strong>
-                <controls-audio
-                    :file_uri="localProduct.file_uri"
+                 <controls-audio
+                    :product="localProduct"
                 ></controls-audio>
             </li>
             <div class="card-footer">

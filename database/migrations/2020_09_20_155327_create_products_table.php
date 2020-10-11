@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('description');
             $table->string('title');
             $table->float('price');
-            $table->text('lyrics');
+            $table->text('lyrics')->nullable();
             $table->string('file');
             $table->timestamps();
         });

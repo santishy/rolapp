@@ -55,8 +55,8 @@
                     </div>
                     <div class="form-group">
                         <controls-audio
-                            v-if="file_uri"
-                            :file_uri="file_uri"
+                            v-if="localProduct.file_uri"
+                            :product="localProduct"
                         ></controls-audio>
                         <label>Cargar archivo</label>
                         <input
@@ -75,28 +75,23 @@
                 </form>
             </div>
         </div>
-         <notifications group="foo" />
+        <notifications group="foo" />
     </div>
 </template>
 
 <script>
-
 export default {
     data() {
         return {
             localProduct: {},
             fileSelected: null,
-            errors: null,
-            file_uri: null
+            errors: null
         };
     },
     mounted() {
         if (!!this.product) {
-            console.log(this.product);
             this.localProduct = this.product;
-            this.file_uri = this.product.file_uri;
         }
-       
     },
     props: {
         url: {
@@ -114,8 +109,7 @@ export default {
         // Crear producto, se envia al backend  productController->store()
         submit() {
             let fd = new FormData(document.getElementById("formProduct"));
-
-            fd.append("file", this.fileSelected);
+            if (!!this.fileSelected) fd.append("file", this.fileSelected);
             if (this.method == "put") fd.append("_method", "PUT");
             axios["post"](this.url, fd)
                 .then(res => {
@@ -123,14 +117,20 @@ export default {
                     this.localProduct = null;
                     this.fileSelected = null;
                     this.localProduct = res.data.data;
-                    if(this.method === 'post'){
+                    if (this.method === "post") {
                         EventBus.$emit("product-created", this.localProduct);
-                        this.notification('Se creo correctamente','success','Productos')
+                        this.notification(
+                            "Se creo correctamente",
+                            "success",
+                            "Productos"
+                        );
+                    } else {
+                        this.notification(
+                            "Actualizado correctamente",
+                            "primary",
+                            "Productos"
+                        );
                     }
-                    else{
-                        this.notification('Actualizado correctamente','primary','Productos')
-                    }
-                    
                 })
                 .catch(err => {
                     this.errors = Object.values(

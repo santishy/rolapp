@@ -1,12 +1,12 @@
 <template>
     <div>
-        <audio :src="file_uri" id="audio" type="audio/mpeg"></audio>
+        <audio :src="product.file_uri" :id="`audio_${product.id}`" type="audio/mpeg"></audio>
         <div id="controls">
             <div class="form-group mb-0">
                 <input
                     type="range"
                     class="form-control-range"
-                    id="time"
+                    :id="`time_${product.id}`"
                     step=".1"
                     max="1"
                     min="0"
@@ -65,7 +65,7 @@
                         type="range"
                         @change="volume"
                         class="form-control-range"
-                        id="volume"
+                        :id="`volume_${product.id}`"
                         step=".1"
                         max="1"
                         min="0"
@@ -81,20 +81,19 @@
 export default {
     data() {
         return {
-            audio: document.getElementById("audio")
+            audio: document.getElementById('audio'+this.index)
         };
     },
     props: {
-        file_uri: {
-            type: String,
-            required: true
+        product:{
+            type:Object
         }
     },
     mounted() {
-        this.audio = document.getElementById("audio");
-        this.audio.volume = document.getElementById("volume").value;
+        this.audio = document.getElementById(`audio_${this.product.id}`);
+        this.audio.volume = document.getElementById(`volume_${this.product.id}`).value;
         this.audio.ontimeupdate = () => {
-            let time = document.getElementById("time");
+            let time = document.getElementById(`time_${this.product.id}`);
             time.max = this.audio.duration;
             time.value = this.audio.currentTime;
         };

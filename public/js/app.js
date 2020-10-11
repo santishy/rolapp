@@ -1990,23 +1990,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      audio: document.getElementById("audio")
+      audio: document.getElementById('audio' + this.index)
     };
   },
   props: {
-    file_uri: {
-      type: String,
-      required: true
+    product: {
+      type: Object
     }
   },
   mounted: function mounted() {
     var _this = this;
 
-    this.audio = document.getElementById("audio");
-    this.audio.volume = document.getElementById("volume").value;
+    this.audio = document.getElementById("audio_".concat(this.product.id));
+    this.audio.volume = document.getElementById("volume_".concat(this.product.id)).value;
 
     this.audio.ontimeupdate = function () {
-      var time = document.getElementById("time");
+      var time = document.getElementById("time_".concat(_this.product.id));
       time.max = _this.audio.duration;
       time.value = _this.audio.currentTime;
     };
@@ -2184,15 +2183,12 @@ __webpack_require__.r(__webpack_exports__);
     return {
       localProduct: {},
       fileSelected: null,
-      errors: null,
-      file_uri: null
+      errors: null
     };
   },
   mounted: function mounted() {
     if (!!this.product) {
-      console.log(this.product);
       this.localProduct = this.product;
-      this.file_uri = this.product.file_uri;
     }
   },
   props: {
@@ -2213,7 +2209,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       var fd = new FormData(document.getElementById("formProduct"));
-      fd.append("file", this.fileSelected);
+      if (!!this.fileSelected) fd.append("file", this.fileSelected);
       if (this.method == "put") fd.append("_method", "PUT");
       axios["post"](this.url, fd).then(function (res) {
         _this.errors = null;
@@ -2221,12 +2217,12 @@ __webpack_require__.r(__webpack_exports__);
         _this.fileSelected = null;
         _this.localProduct = res.data.data;
 
-        if (_this.method === 'post') {
+        if (_this.method === "post") {
           EventBus.$emit("product-created", _this.localProduct);
 
-          _this.notification('Se creo correctamente', 'success', 'Productos');
+          _this.notification("Se creo correctamente", "success", "Productos");
         } else {
-          _this.notification('Actualizado correctamente', 'primary', 'Productos');
+          _this.notification("Actualizado correctamente", "primary", "Productos");
         }
       })["catch"](function (err) {
         _this.errors = Object.values(err.response.data.errors).flat();
@@ -2328,6 +2324,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -38021,11 +38018,27 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("audio", {
-      attrs: { src: _vm.file_uri, id: "audio", type: "audio/mpeg" }
+      attrs: {
+        src: _vm.product.file_uri,
+        id: "audio_" + _vm.product.id,
+        type: "audio/mpeg"
+      }
     }),
     _vm._v(" "),
     _c("div", { attrs: { id: "controls" } }, [
-      _vm._m(0),
+      _c("div", { staticClass: "form-group mb-0" }, [
+        _c("input", {
+          staticClass: "form-control-range",
+          attrs: {
+            type: "range",
+            id: "time_" + _vm.product.id,
+            step: ".1",
+            max: "1",
+            min: "0",
+            value: "0"
+          }
+        })
+      ]),
       _vm._v(" "),
       _c(
         "div",
@@ -38142,7 +38155,7 @@ var render = function() {
                 staticClass: "form-control-range",
                 attrs: {
                   type: "range",
-                  id: "volume",
+                  id: "volume_" + _vm.product.id,
                   step: ".1",
                   max: "1",
                   min: "0",
@@ -38157,26 +38170,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group mb-0" }, [
-      _c("input", {
-        staticClass: "form-control-range",
-        attrs: {
-          type: "range",
-          id: "time",
-          step: ".1",
-          max: "1",
-          min: "0",
-          value: "0"
-        }
-      })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -38438,9 +38432,9 @@ var render = function() {
                 "div",
                 { staticClass: "form-group" },
                 [
-                  _vm.file_uri
+                  _vm.localProduct.file_uri
                     ? _c("controls-audio", {
-                        attrs: { file_uri: _vm.file_uri }
+                        attrs: { product: _vm.localProduct }
                       })
                     : _vm._e(),
                   _vm._v(" "),
@@ -38589,9 +38583,7 @@ var render = function() {
             [
               _c("strong", [_vm._v("Audio:")]),
               _vm._v(" "),
-              _c("controls-audio", {
-                attrs: { file_uri: _vm.localProduct.file_uri }
-              })
+              _c("controls-audio", { attrs: { product: _vm.localProduct } })
             ],
             1
           ),
@@ -52473,8 +52465,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/nico/code/rolapp/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/nico/code/rolapp/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\laragon\www\rolapp\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\laragon\www\rolapp\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
