@@ -2,17 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\MakingPayment;
 use Illuminate\Http\Request;
+use App\Paypal;
 
 class PaymentController extends Controller
 {
-    public function pay(){
-
+    public function pay(Request $request){
+        $paypal = resolve(Paypal::class);
+        return $paypal->handlePayment($request);
     }
     public function approval(){
-
+        $paypal = resolve(Paypal::class);
+        $payment = $paypal->handleApproval();
+        if($payment->status == 'COMPLETED'){
+            event(new MakingPayment($payment));
+        }
     }
     public function cancelled(){
-        
+        return redirect()->route('home');
     }
 }

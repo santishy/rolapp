@@ -30,6 +30,9 @@ Route::post('/payments/pay','PaymentController@pay')->name('payments.pay');
 Route::get('/payments/approval','PaymentController@approval')->name('payments.approval');
 Route::get('/payments/cancelled','Paymentcontroller@cancelled')->name('payments.cancelled');
 
+//EJEMPLO DE PAGO CON PAYPAL
+Route::get('/songs','SongsController@index');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();

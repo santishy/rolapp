@@ -5,6 +5,7 @@ namespace App;
 use App\Traits\ConsumeExternalService;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use App\Payment;
 
 
 class Paypal extends Model
@@ -26,7 +27,21 @@ class Paypal extends Model
         $order = $this->createOrder($request->value,'mxn');
         $links = collect($order->links);
         $approve = $links->where('rel','approve')->first();
-        redirect($approve->href);
+        session()->put('order_id',$order->id);
+        session()->put('product_id',$request->product_id);
+        return redirect($approve->href);
+    }
+    public function handleApproval()
+    {
+        if(session()->has('order_id')){
+            $payment = $this->capturePayment(session()->get('order_id'));
+            if($payment->status === 'COMPLETED'){
+                $payment->product_id = session()->get('product_id');
+               return $payment;
+            }
+        }
+        return redirect()->route('home');
+
     }
     public function resolveAuthorization(&$queryParams, &$formParams, &$headers)
     {
@@ -76,5 +91,9 @@ class Paypal extends Model
             [],
             ['Content-Type' => 'application/json']
         );
+    }
+
+    public function decodeResponse($response){
+        return json_decode($response);
     }
 }

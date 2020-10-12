@@ -7,7 +7,10 @@ use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
 use App\Events\FileUpdated;
+use App\Events\MakingPayment;
 use App\Listeners\RemovePreviusFile;
+use App\Listeners\CreatingPayment;
+use App\Listeners\SendMailToPayer;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -22,7 +25,11 @@ class EventServiceProvider extends ServiceProvider
         ],
         FileUpdated::class => [
             RemovePreviusFile::class
-        ]
+        ],
+        MakingPayment::class => [
+            CreatingPayment::class,
+            SendMailToPayer::class,
+        ],
     ];
 
     /**
