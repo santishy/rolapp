@@ -33,8 +33,11 @@ Route::get('/payments/cancelled','Paymentcontroller@cancelled')->name('payments.
 //EJEMPLO DE PAGO CON PAYPAL
 Route::get('/songs','SongsController@index');
 
+//songs 
+Route::get('/songs/{payment}','SongsController@show')->name('songs');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+

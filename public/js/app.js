@@ -38303,8 +38303,6 @@ var render = function() {
             },
             [
               _c("div", { staticClass: "form-group" }, [
-                _c("label", { attrs: { for: "" } }, [_vm._v("Título")]),
-                _vm._v(" "),
                 _c("input", {
                   directives: [
                     {
@@ -38334,8 +38332,6 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form-group" }, [
-                _c("label", { attrs: { for: "" } }, [_vm._v("Descripción")]),
-                _vm._v(" "),
                 _c("textarea", {
                   directives: [
                     {
@@ -38368,8 +38364,6 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form-group" }, [
-                _c("label", { attrs: { for: "" } }, [_vm._v("Letra")]),
-                _vm._v(" "),
                 _c("textarea", {
                   directives: [
                     {
@@ -38398,8 +38392,6 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form-group" }, [
-                _c("label", [_vm._v("Precio")]),
-                _vm._v(" "),
                 _c("input", {
                   directives: [
                     {
@@ -38438,7 +38430,7 @@ var render = function() {
                       })
                     : _vm._e(),
                   _vm._v(" "),
-                  _c("label", [_vm._v("Cargar archivo")]),
+                  _c("label", [_vm._v("Cargar canción")]),
                   _vm._v(" "),
                   _c("input", {
                     staticClass: "form-control border-0",

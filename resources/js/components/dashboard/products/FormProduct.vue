@@ -12,7 +12,7 @@
                 <h5 class="card-title text-center">{{ getTitle }}</h5>
                 <form id="formProduct" @submit.prevent="submit">
                     <div class="form-group">
-                        <label for="">Título</label>
+                    
                         <input
                             type="text"
                             placeholder="Escribe el título"
@@ -23,7 +23,7 @@
                         />
                     </div>
                     <div class="form-group">
-                        <label for="">Descripción</label>
+                        
                         <textarea
                             class="form-control border-0"
                             placeholder="Descripción..."
@@ -33,7 +33,7 @@
                         ></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="">Letra</label>
+                      
                         <textarea
                             class="form-control border-0"
                             name="lyrics"
@@ -43,7 +43,7 @@
                         ></textarea>
                     </div>
                     <div class="form-group">
-                        <label>Precio</label>
+                       
                         <input
                             type="number"
                             class="form-control border-0"
@@ -58,7 +58,7 @@
                             v-if="localProduct.file_uri"
                             :product="localProduct"
                         ></controls-audio>
-                        <label>Cargar archivo</label>
+                        <label>Cargar canción</label>
                         <input
                             type="file"
                             class="form-control border-0"

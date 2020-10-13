@@ -29,8 +29,9 @@ class CreatingPayment
     {
         Payment::create([
             'id' => $event->payment->id,
-            'email' => $event->payment->email,
+            'email' => $event->payment->payer->email_address,
             'status' => $event->payment->status,
+            'product_id' => session()->get('product_id')
         ]);      
     }
 }

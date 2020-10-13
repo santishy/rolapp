@@ -19,6 +19,7 @@ class CreatePaymentsTable extends Migration
             $table->string('email');
             $table->float('total',2)->default(0);
             $table->string('status');
+            $table->integer('downloads')->default(5);
             $table->timestamps();
         });
     }

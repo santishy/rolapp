@@ -15,11 +15,15 @@ class PaymentController extends Controller
     public function approval(){
         $paypal = resolve(Paypal::class);
         $payment = $paypal->handleApproval();
+
+        
         if($payment->status == 'COMPLETED'){
-            event(new MakingPayment($payment));
+           return  event(new MakingPayment($payment));
         }
+        return redirect('home'); // AQUI PONER UNA VISTA DE QUE NO SE PUDO HACER LA COMPRA CORRECTAMENTE E INTENTAR DE NUEVO 
+
     }
     public function cancelled(){
-        return redirect()->route('home');
+        return redirect()->route('home'); //VISTA DE CANCELACION DE PARTE DEL USUARIO .. 
     }
 }
