@@ -12,7 +12,24 @@
                 <h5 class="card-title text-center">{{ getTitle }}</h5>
                 <form id="formProduct" @submit.prevent="submit">
                     <div class="form-group">
-                    
+                        <select
+                            name="musical_genre"
+                            class="form-control"
+                            v-model="localProduct.musical_genre"
+                        >
+                            <option value="default" disabled>Elige un género</option>
+                            <option value="pop">Pop</option>
+                            <option value="ranchera">Ranchera</option>
+                            <option value="norteño banda">Norteño banda</option>
+                            <option value="banda">Banda</option>
+                            <option value="mariachi">Mariachi</option>
+                            <option value="bachata">Bachata</option>
+                            <option value="balada romantica"
+                                >Balada romantica</option
+                            >
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <input
                             type="text"
                             placeholder="Escribe el título"
@@ -23,7 +40,6 @@
                         />
                     </div>
                     <div class="form-group">
-                        
                         <textarea
                             class="form-control border-0"
                             placeholder="Descripción..."
@@ -33,7 +49,6 @@
                         ></textarea>
                     </div>
                     <div class="form-group">
-                      
                         <textarea
                             class="form-control border-0"
                             name="lyrics"
@@ -43,7 +58,6 @@
                         ></textarea>
                     </div>
                     <div class="form-group">
-                       
                         <input
                             type="number"
                             class="form-control border-0"
@@ -92,6 +106,10 @@ export default {
         if (!!this.product) {
             this.localProduct = this.product;
         }
+        else{
+            this.localProduct.musical_genre = 'default';
+        }
+        
     },
     props: {
         url: {

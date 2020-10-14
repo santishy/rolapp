@@ -4,6 +4,11 @@
             <h3 class="card-text text-center">{{ localProduct.title }}</h3>
         </div>
         <ul class="list-group">
+             <li class="list-group-item">
+                <p class="card-text">
+                    <strong>Género:</strong> {{ localProduct.musical_genre.toUpperCase() }}
+                </p>
+            </li>
             <li class="list-group-item">
                 <p class="card-text">
                     <strong>Descripcion:</strong> {{ localProduct.description }}

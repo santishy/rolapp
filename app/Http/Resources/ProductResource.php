@@ -23,6 +23,7 @@ class ProductResource extends JsonResource
             'price' => $this->price,
             'formatted_price' => "$".number_format($this->price,2),
             'file_uri' =>  Storage::url($this->file),
+            'musical_genre' => $this->musical_genre,
         ];
     }
 }

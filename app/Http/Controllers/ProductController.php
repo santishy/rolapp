@@ -70,7 +70,8 @@ class ProductController extends Controller
                 ? "unique:products,title,$request->id|required" : 'unique:products,title|required',
             'description' => 'required',
             'file' => $request->hasFile('file') ? 'required|file|mimes:mpga,mp2,mp2a,mp3,m2a,m3a' : '',
-            'price' => 'required|numeric'
+            'price' => 'required|numeric',
+            'musical_genre' => 'required'
         ], [
             'description.required' => 'La descripción es requerida',
             'file.required' => 'El archivo de audio es requerido',
@@ -79,7 +80,8 @@ class ProductController extends Controller
             'price.required' => 'El precio es requerido',
             'price.numeric' => 'El precio debe ser un valor númerico',
             'file.file' => 'El archivo de audio debe ser archivo',
-            'file.mimes' => 'El archivo no tiene un formato valido'
+            'file.mimes' => 'El archivo no tiene un formato valido',
+            'musical_genre.required' => 'El género musical es requerido'
         ]);
     }
     public function destroy(Product $product){

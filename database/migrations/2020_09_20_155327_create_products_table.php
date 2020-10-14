@@ -16,10 +16,12 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('description');
+            $table->string('musical_genre');
             $table->string('title');
             $table->float('price');
             $table->text('lyrics')->nullable();
             $table->string('file');
+            $table->index('musical_genre');
             $table->timestamps();
         });
     }

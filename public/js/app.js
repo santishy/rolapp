@@ -2178,6 +2178,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2189,6 +2203,8 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     if (!!this.product) {
       this.localProduct = this.product;
+    } else {
+      this.localProduct.musical_genre = 'default';
     }
   },
   props: {
@@ -2324,6 +2340,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -38303,6 +38324,76 @@ var render = function() {
             },
             [
               _c("div", { staticClass: "form-group" }, [
+                _c(
+                  "select",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.localProduct.musical_genre,
+                        expression: "localProduct.musical_genre"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: { name: "musical_genre" },
+                    on: {
+                      change: function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.$set(
+                          _vm.localProduct,
+                          "musical_genre",
+                          $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        )
+                      }
+                    }
+                  },
+                  [
+                    _c(
+                      "option",
+                      { attrs: { value: "default", disabled: "" } },
+                      [_vm._v("Elige un género")]
+                    ),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "pop" } }, [_vm._v("Pop")]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "ranchera" } }, [
+                      _vm._v("Ranchera")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "norteño banda" } }, [
+                      _vm._v("Norteño banda")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "banda" } }, [
+                      _vm._v("Banda")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "mariachi" } }, [
+                      _vm._v("Mariachi")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "bachata" } }, [
+                      _vm._v("Bachata")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "balada romantica" } }, [
+                      _vm._v("Balada romantica")
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group" }, [
                 _c("input", {
                   directives: [
                     {
@@ -38543,6 +38634,17 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("ul", { staticClass: "list-group" }, [
+          _c("li", { staticClass: "list-group-item" }, [
+            _c("p", { staticClass: "card-text" }, [
+              _c("strong", [_vm._v("Género:")]),
+              _vm._v(
+                " " +
+                  _vm._s(_vm.localProduct.musical_genre.toUpperCase()) +
+                  "\n            "
+              )
+            ])
+          ]),
+          _vm._v(" "),
           _c("li", { staticClass: "list-group-item" }, [
             _c("p", { staticClass: "card-text" }, [
               _c("strong", [_vm._v("Descripcion:")]),
