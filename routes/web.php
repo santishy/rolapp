@@ -11,12 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Auth::routes();
+/*Route::get('/', function () {
+    return view('welcome');
+});*/ //ESTA PARTE LA CAMBIE AL HOMECONTROLLER
+
+
 // products in dashboard
+Route::get('/dashboard',function(){
+    return view('dashboard.dashboard');
+})->middleware('auth');
 Route::get('/products/create','ProductController@create')->name('products.create');
 Route::post('/products/store','ProductController@store')->name('products.store');
 Route::get('/products','ProductController@index')->name('products.index');
@@ -36,7 +40,7 @@ Route::get('/songs','SongsController@index');
 //songs 
 Route::get('/songs/{payment}','SongsController@show')->name('songs');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
 
