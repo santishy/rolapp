@@ -38,4 +38,15 @@ Vue.use(Notifications)
 
 const app = new Vue({
     el: '#app',
+    created:function() {
+      alert('si llega alv')
+    },
+    mounted:function(){
+      $( ".nav-link" ).on('click',function(e) {
+      e.preventDefault();
+      var element = "#" + $( this ).data('link');
+
+      $("html, body").animate({ scrollTop: $(element).offset().top}, 500);
+      });
+    }
 });
