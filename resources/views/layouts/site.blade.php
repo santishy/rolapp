@@ -6,9 +6,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
+    <title>@yield('title')</title>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -18,17 +16,51 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
- 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet"> 
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
-      body{
+      body, html{
         background:#000;
+        font-family: 'Montserrat', sans-serif;
+        max-width:100% !important;
+        width:100% !important;
+      }
+
+      h1,h2,h3,h4,h5{
+        font-family: 'Montserrat', sans-serif;
       }
 
       .row-custom {
-        height:95vh;
+        height:auto;
         min-height:95vh;
+      }
+
+      .ul-custom {
+        list-style: none;
+      }
+
+      .ul-custom li {
+        margin:15px;
+      }
+
+      .ul-custom li{
+        color: #fff;
+        font-size:18px;
+      }
+
+      .ul-custom li a{
+        color: #fff;
       }
     </style>
 </head>
@@ -36,7 +68,7 @@
   <div id="app">
     <header class="mb-4">
       <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-      <a class="navbar-brand" href="#" style="width: 10% !important">
+      <a class="navbar-brand d-none" href="#" style="width: 10% !important">
         <img class="img-responsive" src="images/logo_can.png" width="30%" alt="logo" />
       </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

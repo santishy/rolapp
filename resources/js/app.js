@@ -39,7 +39,7 @@ Vue.use(Notifications)
 const app = new Vue({
     el: '#app',
     created:function() {
-      alert('si llega alv')
+      alert('si llega')
     },
     mounted:function(){
       $( ".nav-link" ).on('click',function(e) {
