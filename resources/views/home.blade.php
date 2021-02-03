@@ -4,13 +4,14 @@
 @section('content')
 <div class="container-fluid mt-4">
   <div id="divHome" class="row row-custom mb-2">
-    <div class="col col-lg-4 col-md-6 col-12 text-center">
+    <div class="col col-lg-5 col-md-6 col-12 text-center">
       <img class="img-fluid align-middle" src="./images/logo.png" alt="logo" />
     </div>
-    <div class="col col-lg-8 col-md-6 col-12 text-center">
-      <video autoplay muted loop id="myVideo">
+    <div class="col col-lg-7 col-md-6 col-12 text-center">
+      <!--<video autoplay muted loop id="myVideo">
         <source src="video/video.mp4" type="video/mp4">
-      </video>
+      </video>-->
+      <img class="img-fluid" src="images/home.jpeg" alt="Imagen Jorge Alexandere" />
     </div>
   </div>
   <!-- end row --> 
@@ -63,8 +64,26 @@
     </div>
   </div>
   <!-- end row -->
-  <footer>
-    <p>pie de pagina</p>
+  <footer class="mt-3">
+    <div class="pre-footer">
+      <ul class="ul-custom-footer">
+        <li>
+        <a href="#"><i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i></a>
+        </li>
+        <li>
+        <a href="#"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a>
+        </li>
+        <li>
+        <a href="#"><i class="fa fa-youtube-play fa-lg" aria-hidden="true"></i></a>
+        </li>
+        <li><a href="#"><i class="fa fa-whatsapp fa-lg" aria-hidden="true"></i></a></li>
+      </ul>
+    </div>
+    <div class="div-footer text-lg-left text-center">
+      <span class="text-light">Jorge Alberto Alejandre © 2021</span>
+      <span class="d-block d-sm-none"> | </span>
+      <span  class="text-light float-md-right">Powered by: <a href="#" class="text-info font-weight-bold">Nicolás Jiménez</a></span>
+    </div>
   </footer>
 </div>
 <!-- end container -->

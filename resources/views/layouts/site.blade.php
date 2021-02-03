@@ -37,6 +37,16 @@
         width:100% !important;
       }
 
+      footer {
+        background:#000;
+        padding:0.5em !important;
+        width:100%;
+      }
+
+      footer .pre-footer {
+        text-align:center;
+      }
+
       h1,h2,h3,h4,h5{
         font-family: 'Montserrat', sans-serif;
       }
@@ -61,6 +71,19 @@
 
       .ul-custom li a{
         color: #fff;
+      }
+
+      .ul-custom-footer {
+        list-style:none;
+      }
+
+      .ul-custom-footer li {
+        display:inline-block;
+        margin-left:0.5em;
+      }
+
+      .ul-custom-footer li a{
+        color:#fff;
       }
     </style>
 </head>
