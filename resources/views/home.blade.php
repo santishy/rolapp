@@ -16,7 +16,7 @@
   <!-- end row --> 
   <div id="divBiography" class="row row-custom text-light" style="background:#111;">
     <div class="col col-12 text-center">
-      <h1 class="mb-2 mt-4 text-center font-weight-bold cursive-custom" style="border-bottom:1px solid #fff;">BIOGRAFÍA</h1>
+      <h1 class="mb-2 mt-5 text-center font-weight-bold cursive-custom" style="border-bottom:1px solid #fff;">BIOGRAFÍA</h1>
     </div>
     <div class="col col-lg-6 col-12 mt-4 mb-2">
       <p class="text-justify align-middle" style="margin-top:10%;">Hola¡ mi nombre es Jorge Alberto Alejandre Romero, tengo la bendición de pertenecer a dos hermosos Estados que son: Guadalajara, Jalisco y Michoacán. El primero es donde nací y el segundo donde crecí y actualmente radico.

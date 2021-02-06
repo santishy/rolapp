@@ -29,7 +29,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
    
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet"> 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
@@ -56,6 +56,39 @@
 
       h1,h2,h3,h4,h5{
         font-family: 'Montserrat', sans-serif;
+      }
+
+      .lnk-one {
+        transform:translateX(-62px);
+      }
+
+      .lnk-two {
+        transform:translateX(62px);
+      }
+
+      .lnk-up {
+        background-color:#353857;
+        border-radius:45px;
+        bottom:10%;
+        color:white;
+        height:45px;
+        opacity:0.9;
+        position:fixed;
+        right: -50px;
+        text-align:center;
+        text-decoration:none;
+        transition:0.2s all;
+        width:45px;
+      }
+
+      .lnk-up span {
+        font-weight:bold;
+        line-height:2.8;
+      }
+
+      .lnk-up:hover {
+        color:#fff !important;
+        opacity:1;
       }
 
       .row-custom {
@@ -97,7 +130,7 @@
 <body>
   <div id="app">
     <header class="mb-4">
-      <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand d-none" href="#" style="width: 10% !important">
         <img class="img-responsive" src="images/logo_can.png" width="30%" alt="logo" />
       </a>
@@ -107,16 +140,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mx-auto">
             <li class="nav-item active">
-              <a class="nav-link" data-link="divHome" href="#">INICIO</a>
+              <a class="nav-link nav-link-custom" data-link="divHome" href="#">INICIO</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-link="divBiography" href="#">BIOGRAFÍA</a>
+              <a class="nav-link nav-link-custom" data-link="divBiography" href="#">BIOGRAFÍA</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" da-link="divContact" href="#">CONTACTO</a>
+              <a class="nav-link nav-link-custom" data-link="divContact" href="#">CONTACTO</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">CANCIONES</a>
+              <a class="nav-link" href="{{ url('songs') }}">CANCIONES</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">VIDEOS</a>
@@ -137,6 +170,38 @@
     <main class="py-4">
         @yield('content')
     </main>
+    <a id="lnkUp" href="#" class="lnk-up" title="Ir arriba">
+      <span>
+        <i class="fa fa-arrow-up"></i>
+      </span>
+    </a>
   </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+			  crossorigin="anonymous"></script><script>
+    $(function() {
+      $( window ).scroll(function() {
+        if ($( this ).scrollTop() > 50) {
+            $( ".lnk-up" ).addClass('lnk-one');
+            $( ".lnk-up" ).removeClass('lnk-two');
+        } else {
+            $( ".lnk-up" ).addClass('lnk-two');
+            $( ".lnk-up" ).removeClass('lnk-one');
+        }
+      });
+
+      $( '#lnkUp' ).on("click",function(e) {
+        e.preventDefault();
+        $("html, body").animate({ scrollTop: 0}, 800);
+        return false;
+      });
+
+      $( ".nav-link-custom" ).on('click',function(e) {
+        e.preventDefault();
+        var element = "#" + $( this ).data('link');
+
+        $("html, body").animate({ scrollTop: $(element).offset().top}, 500);
+      });
+    });
+  </script>      
 </body>
 </html>
