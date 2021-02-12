@@ -1,13 +1,15 @@
-@extends('layouts.app')
+@extends('layouts.site')
+@section('title','Jorge Albero Alejandre Canciones')
 
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                @foreach($songs as $song)
-                    @include('payments.paypal',['product' => $song]);
-                @endforeach
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<div class="row">
+			<div class="col col-12 text-center">
+				<h1 class="mb-4 cursive-custom text-light border-bottom">CANCIONES</h1>
+			</div>
+			@foreach($songs as $song)
+				@include('songs.song',['product' => $song]);
+			@endforeach
+		</div>
+	</div>
 @endsection

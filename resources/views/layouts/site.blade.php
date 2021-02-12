@@ -44,11 +44,17 @@
         font-family: 'Damion', cursive !important;
       }
 
+      .border-bottom-custom {
+        border-bottom:2px solid #fff;
+      }
+
       footer {
         background:#000;
-        padding:0.5em !important;
+        height:2.5rem;
+        padding:1rem !important;
         width:100%;
       }
+      
 
       footer .pre-footer {
         text-align:center;
@@ -91,6 +97,11 @@
         opacity:1;
       }
 
+      .page-container {
+        position:relative;
+        min-height:100vh;
+      }
+
       .row-custom {
         height:auto;
         min-height:95vh;
@@ -128,7 +139,7 @@
     </style>
 </head>
 <body>
-  <div id="app">
+  <div class="page-container-fluid" id="app">
     <header class="mb-4">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand d-none" href="#" style="width: 10% !important">
@@ -140,7 +151,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mx-auto">
             <li class="nav-item active">
-              <a class="nav-link nav-link-custom" data-link="divHome" href="#">INICIO</a>
+              <a class="nav-link nav-link-custom" data-link="divHome" href="/">INICIO</a>
             </li>
             <li class="nav-item">
               <a class="nav-link nav-link-custom" data-link="divBiography" href="#">BIOGRAFÍA</a>
@@ -167,7 +178,7 @@
         </div>
       </nav>
     </header>
-    <main class="py-4">
+    <main class="container-fluid py-4">
         @yield('content')
     </main>
     <a id="lnkUp" href="#" class="lnk-up" title="Ir arriba">
@@ -175,9 +186,33 @@
         <i class="fa fa-arrow-up"></i>
       </span>
     </a>
+    
+    <footer class="mt-3">
+      <div class="pre-footer">
+        <ul class="ul-custom-footer">
+          <li>
+          <a href="https://www.facebook.com/JorgeAlbertoAlejandreCompositor" target="_blank"><i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i></a>
+          </li>
+          <li>
+          <a href="#" target="_blank"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a>
+          </li>
+          <li>
+          <a href="https://www.youtube.com/channel/UCtUXTtUHVl_bvpowqM0FaLQ"  target="_blank"><i class="fa fa-youtube-play fa-lg" aria-hidden="true"></i></a>
+          </li>
+          <li><a href="https://wa.me/5213531103303" target="_blank"><i class="fa fa-whatsapp fa-lg" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+      <div class="div-footer text-lg-left text-center">
+        <span class="text-light">Jorge Alberto Alejandre © 2021</span>
+        <span class="d-block d-sm-none"> | </span>
+        <span  class="text-light float-md-right">Powered by: <a href="#" class="text-info font-weight-bold">NS</a></span>
+      </div>
+    </footer>
+    
   </div>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-			  crossorigin="anonymous"></script><script>
+			  crossorigin="anonymous"></script>
+  <script>
     $(function() {
       $( window ).scroll(function() {
         if ($( this ).scrollTop() > 50) {
