@@ -32,115 +32,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet"> 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <style>
-      body, html{
-        background:#000;
-        font-family: 'Montserrat', sans-serif;
-        max-width:100% !important;
-        width:100% !important;
-      }
-
-      .cursive-custom{
-        font-family: 'Damion', cursive !important;
-      }
-
-      .border-bottom-custom {
-        border-bottom:2px solid #fff;
-      }
-
-      footer {
-        background:#000;
-        height:2.5rem;
-        padding:1rem !important;
-        width:100%;
-      }
-      
-
-      footer .pre-footer {
-        text-align:center;
-      }
-
-      h1,h2,h3,h4,h5{
-        font-family: 'Montserrat', sans-serif;
-      }
-
-      .lnk-one {
-        transform:translateX(-62px);
-      }
-
-      .lnk-two {
-        transform:translateX(62px);
-      }
-
-      .lnk-up {
-        background-color:#353857;
-        border-radius:45px;
-        bottom:10%;
-        color:white;
-        height:45px;
-        opacity:0.9;
-        position:fixed;
-        right: -50px;
-        text-align:center;
-        text-decoration:none;
-        transition:0.2s all;
-        width:45px;
-      }
-
-      .lnk-up span {
-        font-weight:bold;
-        line-height:2.8;
-      }
-
-      .lnk-up:hover {
-        color:#fff !important;
-        opacity:1;
-      }
-
-      .no-padding {
-        padding:0px !important;
-      }
-      
-      .page-container {
-        position:relative;
-        min-height:100vh;
-      }
-
-      .row-custom {
-        height:auto;
-        min-height:95vh;
-      }
-
-      .ul-custom {
-        list-style: none;
-      }
-
-      .ul-custom li {
-        margin:15px;
-      }
-
-      .ul-custom li{
-        color: #fff;
-        font-size:18px;
-      }
-
-      .ul-custom li a{
-        color: #fff;
-      }
-
-      .ul-custom-footer {
-        list-style:none;
-      }
-
-      .ul-custom-footer li {
-        display:inline-block;
-        margin-left:0.5em;
-      }
-
-      .ul-custom-footer li a{
-        color:#fff;
-      }
-    </style>
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
 <body>
   <div class="page-container-fluid" id="app">
@@ -170,13 +62,16 @@
               <a class="nav-link" href="#">VIDEOS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i></a>
+              <a class="nav-link" href="https://www.facebook.com/JorgeAlbertoAlejandreCompositor" target="_blank"><i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a>
+              <a class="nav-link" href="https://www.instagram.com/jorgealbertoalejandre/" target="_blank"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa fa-youtube-play fa-lg" aria-hidden="true"></i></a>
+              <a class="nav-link" href="https://www.youtube.com/channel/UCtUXTtUHVl_bvpowqM0FaLQ"  target="_blank"><i class="fa fa-youtube-play fa-lg" aria-hidden="true"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://wa.me/5213531103303" target="_blank"><i class="fa fa-whatsapp fa-lg" aria-hidden="true"></i></a>
             </li>
           </ul>
         </div>
@@ -198,7 +93,7 @@
           <a href="https://www.facebook.com/JorgeAlbertoAlejandreCompositor" target="_blank"><i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i></a>
           </li>
           <li>
-          <a href="#" target="_blank"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/jorgealbertoalejandre/" target="_blank"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a>
           </li>
           <li>
           <a href="https://www.youtube.com/channel/UCtUXTtUHVl_bvpowqM0FaLQ"  target="_blank"><i class="fa fa-youtube-play fa-lg" aria-hidden="true"></i></a>
@@ -215,49 +110,7 @@
     
   </div>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-			  crossorigin="anonymous"></script>
-  <script>
-    $(function() {
-      $( window ).scroll(function() {
-        if ($( this ).scrollTop() > 50) {
-            $( ".lnk-up" ).addClass('lnk-one');
-            $( ".lnk-up" ).removeClass('lnk-two');
-        } else {
-            $( ".lnk-up" ).addClass('lnk-two');
-            $( ".lnk-up" ).removeClass('lnk-one');
-        }
-      });
-
-      $( '#lnkUp' ).on("click",function(e) {
-        e.preventDefault();
-        $("html, body").animate({ scrollTop: 0}, 800);
-        return false;
-      });
-
-      $( ".nav-link-custom" ).on('click',function(e) {
-        e.preventDefault();
-
-        if (  $("#divHome").length ) {
-          var element = "#" + $( this ).data('link');
-
-          $("html, body").animate({ scrollTop: $(element).offset().top}, 500);
-        } else {
-          window.location.href = $(this).attr('href');
-        }
-      });
-
-      /*
-      $( "nav li a" ).each(function(index){
-        if(this.href.trim() == window.location){
-          if( !$(this).parent().parent().hasClass( "dropdown-menu" ) )
-            $(this).parent().addClass( "active" ); // For the first childs.
-          else if( $( this ).parent().parent().parent().hasClass( "dropdown-submenu" ) )
-            $( this ).parent().parent().parent().parent().parent().addClass( "active" ); // For the childs of childs.
-          else
-            $( this ).parent().parent().parent().addClass( "active" ); // For the parents.
-        }
-      });*/
-    });
-  </script>      
+			  crossorigin="anonymous"></script>   
+  <script src="{{ asset('js/main.js') }}"></script>       
 </body>
 </html>
