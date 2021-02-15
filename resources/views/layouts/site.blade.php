@@ -62,6 +62,9 @@
               <a class="nav-link" href="#">VIDEOS</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="{{ url('gallery') }}">GALERÍA</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="https://www.facebook.com/JorgeAlbertoAlejandreCompositor" target="_blank"><i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i></a>
             </li>
             <li class="nav-item">

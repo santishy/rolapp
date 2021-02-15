@@ -42,6 +42,8 @@ Route::get('/songs/{payment}','SongsController@show')->name('songs');
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('/gallery','GalleryController@index');
+
 Auth::routes();
 
 

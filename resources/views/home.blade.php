@@ -19,7 +19,7 @@
     <h1 class="mb-2 mt-5 text-center font-weight-bold cursive-custom" style="border-bottom:1px solid #fff;">BIOGRAFÍA</h1>
   </div>
   <div class="col col-lg-6 col-12 mt-4 mb-2">
-    <p class="text-justify align-middle" style="margin-top:10%;">Hola¡ mi nombre es Jorge Alberto Alejandre Romero, tengo la bendición de pertenecer a dos hermosos Estados que son: Guadalajara, Jalisco y Michoacán. El primero es donde nací y el segundo donde crecí y actualmente radico.
+    <p class="text-justify align-middle font-custom mt-2">Hola¡ mi nombre es Jorge Alberto Alejandre Romero, tengo la bendición de pertenecer a dos hermosos Estados que son: Guadalajara, Jalisco y Michoacán. El primero es donde nací y el segundo donde crecí y actualmente radico.
         Me dedico a dar clases y a componer, esto fue un don que Dios me regalo porque no tengo estudios que me respalden, soy empírico, esto fue desgastante pero nunca me rendí; lo único que te puedo decir es que no abandones tus sueños y metas. </p>
   </div>
   <div class="col col-lg-6 col-12 mb-2 text-center">
@@ -30,7 +30,7 @@
 <div id="divContact" class="row row-custom">
   <div class="col col-lg-5 col-12" style="background:#111;border:4px solid #111;">
     <h1 class="mb-4 mt-5 text-center text-light cursive-custom" style="border-bottom:1px solid #fff;">CONTACTO</h1>
-    <p class="text-justify align-middle text-light">Si deseas ponerte en contacto conmigo puedes contactarme a travéz de mi correo eléctronio y/o teléfono, o si lo prefieres dejame un mensaje, te atenderé a la brevedad</p>
+    <p class="text-justify align-middle text-light font-custom mb-4">Si deseas ponerte en contacto conmigo para contrataciones, eventos o simplemente quieres saludar puedes contactarme a travéz de mi correo eléctronio y/o teléfono, o si lo prefieres dejame un mensaje, te atenderé a la brevedad</p>
     <ul class="ul-custom text-secondary mt-5">
       <li><a href="mailto: domisol_alrja@hotmail.com"><span class="material-icons align-middle">email</span> domisol_alrja@hotmail.com</a></li>
       <li><a href="tel: 3531103303"><span class="material-icons align-middle">local_phone</span> 3531103303</a></li>
