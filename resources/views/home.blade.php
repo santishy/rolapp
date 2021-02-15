@@ -14,7 +14,7 @@
   </div>
 </div>
 <!-- end row --> 
-<div id="divBiography" class="row row-custom text-light" style="background:#111;">
+<div id="divBiography" class="row row-custom text-light" style="background:#000;">
   <div class="col col-12 text-center">
     <h1 class="mb-2 mt-5 text-center font-weight-bold cursive-custom" style="border-bottom:1px solid #fff;">BIOGRAFÍA</h1>
   </div>
@@ -28,7 +28,7 @@
 </div>
 <!-- end row -->
 <div id="divContact" class="row row-custom">
-  <div class="col col-lg-5 col-12" style="background:#111;border:4px solid #222;">
+  <div class="col col-lg-5 col-12" style="background:#111;border:4px solid #111;">
     <h1 class="mb-4 mt-5 text-center text-light cursive-custom" style="border-bottom:1px solid #fff;">CONTACTO</h1>
     <p class="text-justify align-middle text-light">Si deseas ponerte en contacto conmigo puedes contactarme a travéz de mi correo eléctronio y/o teléfono, o si lo prefieres dejame un mensaje, te atenderé a la brevedad</p>
     <ul class="ul-custom text-secondary mt-5">
@@ -36,7 +36,7 @@
       <li><a href="tel: 3531103303"><span class="material-icons align-middle">local_phone</span> 3531103303</a></li>
     </ul>
   </div>
-  <div class="col col-lg-7 col-12 text-light" style="background:#222;">
+  <div class="col col-lg-7 col-12 text-light" style="border-top:4px solid #111;border-bottom:4px solid #111;background:#000;">
     <form action="" class="mt-4">
       <div class="form-group">
         <label for="txtName">Tu nombre</label>
@@ -54,11 +54,13 @@
         <label for="txtSubject">Asunto</label>
         <input type="text" id="txtSubject" class="form-control form-control-lg" required />
       </div>
-      <div class="form-group">
+      <div class="form-group mb-2">
         <label for="txtName">Mensaje</label>
         <textarea name="" id="txtName" cols="30" rows="4" class="form-control form-control-lg" required></textarea>
       </div>
-      <button type="submit" class="btn btn-danger btn-lg float-right">Enviar</button>
+      <div class="col col-12 no-padding">
+        <button type="submit" class="btn btn-danger btn-lg float-right">Enviar</button>
+      </div>
     </form>
   </div>
 </div>

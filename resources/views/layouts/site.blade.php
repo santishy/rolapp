@@ -97,6 +97,10 @@
         opacity:1;
       }
 
+      .no-padding {
+        padding:0px !important;
+      }
+      
       .page-container {
         position:relative;
         min-height:100vh;
@@ -150,14 +154,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mx-auto">
-            <li class="nav-item active">
-              <a class="nav-link nav-link-custom" data-link="divHome" href="/">INICIO</a>
+            <li class="nav-item">
+              <a class="nav-link" data-link="divHome" href="{{ url('/') }}">INICIO</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-link-custom" data-link="divBiography" href="#">BIOGRAFÍA</a>
+              <a class="nav-link nav-link-custom" data-link="divBiography" href="{{ url('/') }}#divBiography">BIOGRAFÍA</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-link-custom" data-link="divContact" href="#">CONTACTO</a>
+              <a class="nav-link nav-link-custom" data-link="divContact" href="{{ url('/') }}#divContact">CONTACTO</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ url('songs') }}">CANCIONES</a>
@@ -232,10 +236,27 @@
 
       $( ".nav-link-custom" ).on('click',function(e) {
         e.preventDefault();
-        var element = "#" + $( this ).data('link');
 
-        $("html, body").animate({ scrollTop: $(element).offset().top}, 500);
+        if (  $("#divHome").length ) {
+          var element = "#" + $( this ).data('link');
+
+          $("html, body").animate({ scrollTop: $(element).offset().top}, 500);
+        } else {
+          window.location.href = $(this).attr('href');
+        }
       });
+
+      /*
+      $( "nav li a" ).each(function(index){
+        if(this.href.trim() == window.location){
+          if( !$(this).parent().parent().hasClass( "dropdown-menu" ) )
+            $(this).parent().addClass( "active" ); // For the first childs.
+          else if( $( this ).parent().parent().parent().hasClass( "dropdown-submenu" ) )
+            $( this ).parent().parent().parent().parent().parent().addClass( "active" ); // For the childs of childs.
+          else
+            $( this ).parent().parent().parent().addClass( "active" ); // For the parents.
+        }
+      });*/
     });
   </script>      
 </body>
