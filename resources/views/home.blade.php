@@ -3,6 +3,24 @@
 @section('title','Jorge Albero Alejandre')
 @section('content')
 
+@if(session()->has('success'))
+  <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+    <p class="h5">{{ session()->get('success') }}</p>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+@endif
+
+@if($errors->any())
+  <div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
+    <p class="h5">{{ $errors->first() }}</p>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+@endif
+
 <div id="divHome" class="row row-custom mb-2">
   <div class="col col-lg-5 col-md-6 col-12 text-center">
     <img class="img-fluid align-middle" src="./images/logo.png" alt="logo" />
@@ -37,29 +55,30 @@
     </ul>
   </div>
   <div class="col col-lg-7 col-12 text-light" style="border-top:4px solid #111;border-bottom:4px solid #111;background:#000;">
-    <form action="" class="mt-4">
+    <form id="frmContact" action="contact-us" method="post" class="mt-4">
+      {{csrf_field()}}
       <div class="form-group">
         <label for="txtName">Tu nombre</label>
-        <input type="text" id="txtName" class="form-control form-control-lg" required />
+        <input type="text" id="txtName" name="firstname" class="form-control form-control-lg" autocomplete="off" maxlength="50" required />
       </div>
       <div class="form-group">
         <label for="txtEmail">Tu correo eléctronico</label>
-        <input type="email" id="txtEmail" class="form-control form-control-lg" required />
+        <input type="email" id="txtEmail" name="email" class="form-control form-control-lg" maxlength="50" autocomplete="off" required />
       </div>
       <div class="form-group">
         <label for="txtPhone">Teléfono</label>
-        <input type="text" id="txtPhone" class="form-control form-control-lg" />
+        <input type="text" id="txtPhone" name="phone" autocomplete="off" maxlength="12" class="form-control form-control-lg" />
       </div>
       <div class="form-group">
         <label for="txtSubject">Asunto</label>
-        <input type="text" id="txtSubject" class="form-control form-control-lg" required />
+        <input type="text" id="txtSubject" name="subject" autocomplete="off" maxlength="50" class="form-control form-control-lg" required />
       </div>
       <div class="form-group mb-2">
         <label for="txtName">Mensaje</label>
-        <textarea name="" id="txtName" cols="30" rows="4" class="form-control form-control-lg" required></textarea>
+        <textarea id="txtName" cols="30" name="message" rows="4" class="form-control form-control-lg" maxlength="250" required></textarea>
       </div>
       <div class="col col-12 no-padding">
-        <button type="submit" class="btn btn-danger btn-lg float-right">Enviar</button>
+        <button id="btnSubmit" type="submit" class="btn btn-danger btn-lg float-right">Enviar</button>
       </div>
     </form>
   </div>
