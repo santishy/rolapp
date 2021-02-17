@@ -42,11 +42,6 @@ const app = new Vue({
       alert('si llega')
     },
     mounted:function(){
-      $( ".nav-link" ).on('click',function(e) {
-      e.preventDefault();
-      var element = "#" + $( this ).data('link');
-
-      $("html, body").animate({ scrollTop: $(element).offset().top}, 500);
-      });
+      alert('la verga')
     }
 });

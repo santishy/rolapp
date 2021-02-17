@@ -9,6 +9,10 @@ $(function() {
       }
     });
 
+    lightbox.option({
+      'albumLabel': 'Imagen %1 de %2'
+    });
+
     $("#frmContact").on('submit',function() {
       $(this).find('#btnSubmit').prop('disabled',false);
       $(this).find('#btnSubmit').addClass('disabled');

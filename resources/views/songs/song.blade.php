@@ -1,4 +1,4 @@
-<div class="col col-lg-6 col-md-4 col-12 mb-4">
+<div class="col col-lg-4 col-md-6 col-12 mb-4">
 	<div class="card">
 		<div class="card-header bg-dark text-light">
 			<h5 class="card-title text-center">{{$product->title}}</h5>

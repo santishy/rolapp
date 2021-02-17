@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Storage;
 class SongsController extends Controller
 {
     public function index(){
-      return view('songs.index',['songs' => Product::paginate(15)]);
+      return view('songs.index',['songs' => Product::paginate(20)]);
     }
 
     public function show(Payment $payment){
