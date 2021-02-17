@@ -11,7 +11,7 @@
 		</div>
 		<div class="card-footer">
 			<p class="h5">Genero: {{is_null($product->musical_genre) || is_empty($product->musical_genre) ? 'Sin género asignado' : $product->musical_genre }}</p>
-			<p class="mt-2 card-text text-dark font-weight-bold text-justify">{{$product->description}}</p>
+			<p class="mt-2 card-text text-dark font-weight-bold text-justify d-none">{{$product->description}}</p>
 		</div>
 	</div>
 </div>
