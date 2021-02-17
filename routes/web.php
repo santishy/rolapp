@@ -44,6 +44,8 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/gallery','GalleryController@index');
 
+Route::get('/videos','VideoController@index');
+
 Route::post('/contact-us', 'ContactController@sendContact');
 
 Auth::routes();
