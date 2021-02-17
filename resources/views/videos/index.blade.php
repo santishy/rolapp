@@ -11,7 +11,9 @@
 	<div class="row">
 		<div class="col col-12">
 			<div class="row">
-				
+				@foreach($videos as $video)
+					@include('videos.video',['video' => $video]);
+				@endforeach
 			</div>
 			<!-- row -->
 		</div>
