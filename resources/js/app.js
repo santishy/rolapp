@@ -28,6 +28,8 @@ Vue.component('controls-audio',require('./components/audio/ControlsComponent.vue
 Vue.component('delete-button',require('./components/dashboard/products/DeleteButtonComponent.vue').default)
 Vue.component('form-image',require('./components/dashboard/gallery/FormImage.vue').default);
 Vue.component('list-gallery',require('./components/dashboard/gallery/ListGallery.vue').default);
+Vue.component('video-list',require('./components/dashboard/videos/VideoList.vue').default);
+Vue.component('form-video',require('./components/dashboard/videos/FormVideo.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

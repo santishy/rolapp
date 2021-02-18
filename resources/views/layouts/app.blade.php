@@ -47,6 +47,9 @@
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="{{route('gallery.create')}}">Crear Galería</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{{route('videos.create')}}">Enlazar video</a>
+                            </li>
                         @endauth
                     </ul>
 

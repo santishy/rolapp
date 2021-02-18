@@ -7,7 +7,7 @@
                 <th>Deshacer</th>
             </thead>
             <tbody>
-                <tr v-for="item in items" :key="item.id">
+                <tr v-for="(item,index) in items" :key="item.id">
                     <td>{{ item.title }}</td>
                     <td>
                         <img
@@ -18,7 +18,7 @@
                         />
                     </td>
                     <td>
-                        <delete-item :id="item.id"></delete-item>
+                        <delete-item :id="item.id" :index="index"></delete-item>
                     </td>
                 </tr>
             </tbody>

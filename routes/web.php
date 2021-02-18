@@ -42,7 +42,7 @@ Route::get('/songs/{payment}', 'SongsController@show')->name('songs');
 
 Route::get('/', 'HomeController@index')->name('home');
 
-// RUTAS GALERIA 
+//::::::::::::::::::::::::::::::::::: RUTAS GALERIA :::::::::::::::::::::::::::::::::::::::::::
 
 Route::get('/gallery', 'GalleryController@index');
 
@@ -50,7 +50,11 @@ Route::get('/gallery/create', 'GalleryController@create')->name('gallery.create'
 Route::post('/gallery', 'GalleryController@store')->middleware('auth');
 Route::delete('/gallery/{item}', 'GalleryController@destroy')->middleware('auth');
 
+//:::::::::::::::::::::VIDEOS::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 Route::get('/videos', 'VideoController@index');
+Route::get('/videos/create','VideoController@create')->name('videos.create')->middleware('auth');
+Route::post('/videos','VideoController@store')->name('videos.store')->middleware('auth');
+Route::delete('/videos/{item}','VideoController@destroy')->name('videos.destroy')->middleware('auth');
 
 Route::post('/contact-us', 'ContactController@sendContact');
 

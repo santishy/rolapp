@@ -12,6 +12,7 @@ class GalleryController extends Controller
 	//
 	public function index()
 	{
+	
 		return view('galleries.index', ['galleries' => Gallery::paginate(20)]);
 	}
 
