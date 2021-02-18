@@ -26,6 +26,7 @@ Vue.component('show-product',require('./components/dashboard/products/ShowCompon
 Vue.component('products-container',require('./components/dashboard/products/ProductsContainerComponent.vue').default);
 Vue.component('controls-audio',require('./components/audio/ControlsComponent.vue').default);
 Vue.component('delete-button',require('./components/dashboard/products/DeleteButtonComponent.vue').default)
+Vue.component('form-image',require('./components/dashboard/gallery/FormImage.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -39,9 +40,9 @@ Vue.use(Notifications)
 const app = new Vue({
     el: '#app',
     created:function() {
-      alert('si llega')
+      
     },
     mounted:function(){
-      alert('la verga')
+     
     }
 });
