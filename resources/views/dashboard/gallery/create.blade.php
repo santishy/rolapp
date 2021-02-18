@@ -6,7 +6,7 @@
                 <form-image></form-image>
             </div>
             <div class="col-md-8">
-                
+                <list-gallery></list-gallery>
             </div>           
         </div>
     </div>

@@ -46,8 +46,9 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/gallery', 'GalleryController@index');
 
-Route::get('/gallery/create', 'GalleryController@create')->middleware('auth');
+Route::get('/gallery/create', 'GalleryController@create')->name('gallery.create')->middleware('auth');
 Route::post('/gallery', 'GalleryController@store')->middleware('auth');
+Route::delete('/gallery/{item}', 'GalleryController@destroy')->middleware('auth');
 
 Route::get('/videos', 'VideoController@index');
 

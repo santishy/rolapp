@@ -44,6 +44,9 @@
                                 <a href="{{route('products.index')}}" class="dropdown-item">Ver todos</a>
                                 </div>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{{route('gallery.create')}}">Crear Galería</a>
+                            </li>
                         @endauth
                     </ul>
 

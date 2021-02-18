@@ -1,5 +1,12 @@
 <template>
     <form class="p-4 bg-white rounded-sm shadow" @submit.prevent="submit">
+        <div v-if="errors" class="alert alert-danger" role="alert">
+            <ul class="py-0 my-0">
+                <li v-for="(value, key, index) in errors" :key="index">
+                    {{ value }}
+                </li>
+            </ul>
+        </div>
         <div class="form-group">
             <label class="control-label" for="title">Título</label>
             <input
@@ -40,7 +47,8 @@ export default {
             fileSelected: null,
             title: "",
             upload: false,
-            load: 0
+            load: 0,
+            errors:null
         };
     },
     methods: {
@@ -63,12 +71,16 @@ export default {
                 }
             })
                 .then(res => {
-                    console.log(res);
+                    EventBus.$emit('saved-image',res.data.data);
+                    this.upload = false;
                 })
                 .catch(err => {
-                    console.log(err);
+                    this.errors = Object.values(
+                        err.response.data.errors
+                    ).flat();
+                    this.upload = false;
                 });
-            this.upload = false;
+            //
         }
     }
 };
