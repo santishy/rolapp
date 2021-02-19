@@ -45,6 +45,9 @@
                                 </div>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{{route('albums.create')}}">Crear Album</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="{{route('gallery.create')}}">Crear Galería</a>
                             </li>
                             <li class="nav-item">

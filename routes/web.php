@@ -56,6 +56,12 @@ Route::get('/videos/create','VideoController@create')->name('videos.create')->mi
 Route::post('/videos','VideoController@store')->name('videos.store')->middleware('auth');
 Route::delete('/videos/{item}','VideoController@destroy')->name('videos.destroy')->middleware('auth');
 
+//:::::::::::::::::::::::::::ALBUMS:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Route::get('/albums', 'AlbumController@index');
+Route::get('/albums/create','AlbumController@create')->name('albums.create')->middleware('auth');
+Route::post('/albums','AlbumController@store')->name('albums.store')->middleware('auth');
+Route::delete('/albums/{item}','AlbumController@destroy')->name('albums.destroy')->middleware('auth');
+
 Route::post('/contact-us', 'ContactController@sendContact');
 
 Auth::routes();
