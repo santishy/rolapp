@@ -13,19 +13,21 @@
                 <form id="formProduct" @submit.prevent="submit">
                     <div class="form-group">
                         <select
-                            name="musical_genre"
+                            name="album_id"
                             class="form-control"
-                            v-model="localProduct.musical_genre"
+                            v-model="localProduct.album_id"
                         >
-                            <option value="default" disabled>Elige un género</option>
-                            <option value="pop">Pop</option>
-                            <option value="ranchera">Ranchera</option>
-                            <option value="norteño banda">Norteño banda</option>
-                            <option value="banda">Banda</option>
-                            <option value="mariachi">Mariachi</option>
-                            <option value="bachata">Bachata</option>
-                            <option value="balada romantica"
-                                >Balada romantica</option
+                            <option value="default" disabled
+                                >Elige un album</option
+                            >
+                            <option
+                                v-for="album in albums"
+                                :key="album.id"
+                                :value="album.id"
+                                :selected="isSelected"
+                                >{{
+                                    album.name + " | " + album.musical_genre
+                                }}</option
                             >
                         </select>
                     </div>
@@ -102,14 +104,13 @@ export default {
             errors: null
         };
     },
-    mounted() {
+    created() {
         if (!!this.product) {
             this.localProduct = this.product;
+            this.localProduct.album_id = this.product.album_id;
+        } else {
+            this.localProduct.album_id = "default";
         }
-        else{
-            this.localProduct.musical_genre = 'default';
-        }
-        
     },
     props: {
         url: {
@@ -121,6 +122,9 @@ export default {
         },
         product: {
             type: Object
+        },
+        albums: {
+            type: Array
         }
     },
     methods: {
@@ -166,6 +170,14 @@ export default {
                 return "Crear Producto";
             }
             return "Modificar producto";
+        },
+        isSelected() {
+            var selected = "";
+            for (let i = 0; this.albums < i; i++) {
+                if (this.localProduct.album_id === this.albums[i].id)
+                    selected = "selected";
+            }
+            return selected;
         }
     }
 };

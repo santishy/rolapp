@@ -2567,6 +2567,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2575,11 +2577,12 @@ __webpack_require__.r(__webpack_exports__);
       errors: null
     };
   },
-  mounted: function mounted() {
+  created: function created() {
     if (!!this.product) {
       this.localProduct = this.product;
+      this.localProduct.album_id = this.product.album_id;
     } else {
-      this.localProduct.musical_genre = 'default';
+      this.localProduct.album_id = "default";
     }
   },
   props: {
@@ -2592,6 +2595,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     product: {
       type: Object
+    },
+    albums: {
+      type: Array
     }
   },
   methods: {
@@ -2630,6 +2636,15 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       return "Modificar producto";
+    },
+    isSelected: function isSelected() {
+      var selected = "";
+
+      for (var i = 0; this.albums < i; i++) {
+        if (this.localProduct.album_id === this.albums[i].id) selected = "selected";
+      }
+
+      return selected;
     }
   }
 });
@@ -2715,9 +2730,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
 //
 //
 //
@@ -39345,12 +39357,12 @@ var render = function() {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.localProduct.musical_genre,
-                        expression: "localProduct.musical_genre"
+                        value: _vm.localProduct.album_id,
+                        expression: "localProduct.album_id"
                       }
                     ],
                     staticClass: "form-control",
-                    attrs: { name: "musical_genre" },
+                    attrs: { name: "album_id" },
                     on: {
                       change: function($event) {
                         var $$selectedVal = Array.prototype.filter
@@ -39363,7 +39375,7 @@ var render = function() {
                           })
                         _vm.$set(
                           _vm.localProduct,
-                          "musical_genre",
+                          "album_id",
                           $event.target.multiple
                             ? $$selectedVal
                             : $$selectedVal[0]
@@ -39375,35 +39387,28 @@ var render = function() {
                     _c(
                       "option",
                       { attrs: { value: "default", disabled: "" } },
-                      [_vm._v("Elige un género")]
+                      [_vm._v("Elige un album")]
                     ),
                     _vm._v(" "),
-                    _c("option", { attrs: { value: "pop" } }, [_vm._v("Pop")]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "ranchera" } }, [
-                      _vm._v("Ranchera")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "norteño banda" } }, [
-                      _vm._v("Norteño banda")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "banda" } }, [
-                      _vm._v("Banda")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "mariachi" } }, [
-                      _vm._v("Mariachi")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "bachata" } }, [
-                      _vm._v("Bachata")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "balada romantica" } }, [
-                      _vm._v("Balada romantica")
-                    ])
-                  ]
+                    _vm._l(_vm.albums, function(album) {
+                      return _c(
+                        "option",
+                        {
+                          key: album.id,
+                          domProps: {
+                            value: album.id,
+                            selected: _vm.isSelected
+                          }
+                        },
+                        [
+                          _vm._v(
+                            _vm._s(album.name + " | " + album.musical_genre)
+                          )
+                        ]
+                      )
+                    })
+                  ],
+                  2
                 )
               ]),
               _vm._v(" "),
@@ -39648,17 +39653,6 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("ul", { staticClass: "list-group" }, [
-          _c("li", { staticClass: "list-group-item" }, [
-            _c("p", { staticClass: "card-text" }, [
-              _c("strong", [_vm._v("Género:")]),
-              _vm._v(
-                " " +
-                  _vm._s(_vm.localProduct.musical_genre.toUpperCase()) +
-                  "\n            "
-              )
-            ])
-          ]),
-          _vm._v(" "),
           _c("li", { staticClass: "list-group-item" }, [
             _c("p", { staticClass: "card-text" }, [
               _c("strong", [_vm._v("Descripcion:")]),

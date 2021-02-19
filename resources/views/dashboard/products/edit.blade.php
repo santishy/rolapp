@@ -5,6 +5,7 @@
             <div class="col-md-6">
             <form-product 
                 :product="{{json_encode($product)}}" 
+                :albums="{{json_encode($albums)}}"
                 method="put" 
                 url="/products/{{$product->id}}"
             >

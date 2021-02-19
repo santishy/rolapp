@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Album;
 use App\Events\FileUpdated;
 use App\Product;
 use Illuminate\Http\Request;
@@ -25,7 +26,8 @@ class ProductController extends Controller
     }
     public function create()
     {
-        return view('dashboard.products.create');
+
+        return view('dashboard.products.create',['albums' => Album::all()]);
     }
 
     public function store(Request $request)
@@ -45,7 +47,10 @@ class ProductController extends Controller
 
     public function edit(Product $product)
     {
-        return view('dashboard.products.edit', ['product' => ProductResource::make($product)]);
+        return view('dashboard.products.edit', [
+            'product' => ProductResource::make($product),
+            'albums' => Album::all()
+        ]);
     }
     public function update(Request $request, Product $product)
     {
@@ -71,7 +76,7 @@ class ProductController extends Controller
             'description' => 'required',
             'file' => $request->hasFile('file') ? 'required|file|mimes:mpga,mp2,mp2a,mp3,m2a,m3a' : '',
             'price' => 'required|numeric',
-            'musical_genre' => 'required'
+            'album_id' => 'required'
         ], [
             'description.required' => 'La descripción es requerida',
             'file.required' => 'El archivo de audio es requerido',
@@ -81,7 +86,7 @@ class ProductController extends Controller
             'price.numeric' => 'El precio debe ser un valor númerico',
             'file.file' => 'El archivo de audio debe ser archivo',
             'file.mimes' => 'El archivo no tiene un formato valido',
-            'musical_genre.required' => 'El género musical es requerido'
+            'album_id.required' => 'El album es requerido'
         ]);
     }
     public function destroy(Product $product){
