@@ -40,6 +40,7 @@ export default {
                 .post("/videos", this.form)
                 .then(res => {
                     EventBus.$emit("video-saved", res.data);
+                    this.form={}
                 })
                 .catch(err => {
                     this.errors = Object.values(

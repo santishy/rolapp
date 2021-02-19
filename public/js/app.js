@@ -2902,6 +2902,7 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.post("/videos", this.form).then(function (res) {
         EventBus.$emit("video-saved", res.data);
+        _this.form = {};
       })["catch"](function (err) {
         _this.errors = Object.values(err.response.data.errors).flat();
         _this.upload = false;
