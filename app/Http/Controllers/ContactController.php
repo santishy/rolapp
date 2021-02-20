@@ -11,7 +11,7 @@ class ContactController extends Controller
     //
 		public function sendContact(Request $request) {
 			try {
-				Mail::to($request->email)->send(new ContactCall($request));
+				Mail::to("domisol_alrja@hotmail.com")->send(new ContactCall($request));
 
 			} catch(\Exception $e){
 				return back()->withErrors(['No fue posible enviar tu mensaje, inténtalo nuevamente más tarde']);

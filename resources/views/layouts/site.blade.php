@@ -35,7 +35,7 @@
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('lightbox/css/lightbox.css') }}" rel="stylesheet">
 </head>
-<body>
+<body class="body-custom">
   <div class="page-container-fluid" id="app">
     <header class="mb-4">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -57,7 +57,7 @@
               <a class="nav-link nav-link-custom" data-link="divContact" href="{{ url('/') }}#divContact">CONTACTO</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url('songs') }}">CANCIONES</a>
+              <a class="nav-link" href="{{ url('albums') }}">CANCIONES</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ url('videos') }}">VIDEOS</a>
@@ -66,16 +66,16 @@
               <a class="nav-link" href="{{ url('gallery') }}">GALERÍA</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://www.facebook.com/JorgeAlbertoAlejandreCompositor" target="_blank"><i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i></a>
+              <a class="nav-link" href="https://www.facebook.com/JorgeAlbertoAlejandreCompositor" target="_blank" title="Visita mi facebook"><i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://www.instagram.com/jorgealbertoalejandre/" target="_blank"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a>
+              <a class="nav-link" href="https://www.instagram.com/jorgealbertoalejandre/" target="_blank" title="Visita mi instagram"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://www.youtube.com/channel/UCtUXTtUHVl_bvpowqM0FaLQ"  target="_blank"><i class="fa fa-youtube-play fa-lg" aria-hidden="true"></i></a>
+              <a class="nav-link" href="https://www.youtube.com/channel/UCtUXTtUHVl_bvpowqM0FaLQ"  target="_blank" title="Visita mi canal en youtube"><i class="fa fa-youtube-play fa-lg" aria-hidden="true"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://wa.me/5213531103303" target="_blank"><i class="fa fa-whatsapp fa-lg" aria-hidden="true"></i></a>
+              <a class="nav-link" href="https://wa.me/5213531103303" target="_blank" title="Contáctame por whatsapp"><i class="fa fa-whatsapp fa-lg" aria-hidden="true"></i></a>
             </li>
           </ul>
         </div>
@@ -94,15 +94,15 @@
       <div class="pre-footer">
         <ul class="ul-custom-footer">
           <li>
-          <a href="https://www.facebook.com/JorgeAlbertoAlejandreCompositor" target="_blank"><i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i></a>
+          <a href="https://www.facebook.com/JorgeAlbertoAlejandreCompositor" target="_blank" title="Visita mi facebook"><i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i></a>
           </li>
           <li>
-          <a href="https://www.instagram.com/jorgealbertoalejandre/" target="_blank"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/jorgealbertoalejandre/" target="_blank" title="Visita mi instagram"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a>
           </li>
           <li>
-          <a href="https://www.youtube.com/channel/UCtUXTtUHVl_bvpowqM0FaLQ"  target="_blank"><i class="fa fa-youtube-play fa-lg" aria-hidden="true"></i></a>
+          <a href="https://www.youtube.com/channel/UCtUXTtUHVl_bvpowqM0FaLQ"  target="_blank" title="Visita mi canal en youtube"><i class="fa fa-youtube-play fa-lg" aria-hidden="true"></i></a>
           </li>
-          <li><a href="https://wa.me/5213531103303" target="_blank"><i class="fa fa-whatsapp fa-lg" aria-hidden="true"></i></a></li>
+          <li><a href="https://wa.me/5213531103303" target="_blank" title="Contáctame por whatsapp"><i class="fa fa-whatsapp fa-lg" aria-hidden="true"></i></a></li>
         </ul>
       </div>
       <div class="div-footer text-lg-left text-center">
