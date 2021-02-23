@@ -64,6 +64,16 @@ iframe {
   width: 100% !important;
 }
 
+.div-gallery {
+  height: 280px !important;
+}
+
+.img-fluid-custom {
+   height:auto;
+   max-height: 250px !important;
+   width:100% !important;
+}
+
 .lnk-one {
   transform:translateX(-62px);
 }
@@ -148,4 +158,6 @@ iframe {
 
 @media (min-width: 992px) { 
   .w-lg-50 {width:50%!important;}
+
+  .img-fluid-custom { max-height: 180px !important;}
 }
