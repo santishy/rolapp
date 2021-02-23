@@ -25,11 +25,11 @@ class VideoController extends Controller
 	public function store(Request $request)
 	{
 		$request->validate([
-			'title' => ['required', 'unique:videos,title'],
+			//'title' => ['unique:videos,title'],
 			'video' => ['required']
 		], [
 			'required' => 'El campo es requerido',
-			'unique' => 'El título ya existe en la base de datos.'
+			//'unique' => 'El título ya existe en la base de datos.'
 		]);
 
 		return Video::create([

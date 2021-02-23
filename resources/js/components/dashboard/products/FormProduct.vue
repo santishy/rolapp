@@ -110,6 +110,7 @@ export default {
             this.localProduct.album_id = this.product.album_id;
         } else {
             this.localProduct.album_id = "default";
+            this.localProduct.price=0;
         }
     },
     props: {

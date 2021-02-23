@@ -12,7 +12,9 @@ class GalleryController extends Controller
 	//
 	public function index()
 	{
-	
+		if (request()->wantsJson()) {
+			return GalleryResource::collection(Gallery::orderByDesc('id')->paginate(25));
+		}
 		return view('galleries.index', ['galleries' => Gallery::paginate(20)]);
 	}
 
@@ -24,12 +26,12 @@ class GalleryController extends Controller
 	public function store(Request $request)
 	{
 		$request->validate([
-			'title' => ['required', 'unique:galleries,title'],
+			//'title' => ['unique:galleries,title'],
 			'image' => ['required', 'image']
 		], [
-			'title.required' => 'El título es requerido',
-			'title.unique'   => 'Ese títutlo ya existe en la base de datos',
-			'image.required' => 'La imagen es requerida.',
+			//'title.required' => 'El título es requerido',
+			//'title.unique'   => 'Ese títutlo ya existe en la base de datos',
+			// 'image.required' => 'La imagen es requerida.',
 			'image.image'    => 'El archivo debe ser una imagen.'
 		]);
 		$gallery = new Gallery();

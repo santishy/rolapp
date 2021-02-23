@@ -7,7 +7,7 @@
                 <th>Deshacer</th>
             </thead>
             <tbody>
-                <tr v-for="(item,index) in items" :key="item.id">
+                <tr v-for="(item, index) in items" :key="item.id">
                     <td>{{ item.title }}</td>
                     <td>
                         <img
@@ -23,25 +23,50 @@
                 </tr>
             </tbody>
         </table>
+        <infinite-loading @infinite="infiniteHandler"></infinite-loading>
     </div>
 </template>
 
 <script>
-import DeleteItem from "./DeleteItem.vue"
+import InfiniteLoading from "vue-infinite-loading";
+import DeleteItem from "./DeleteItem.vue";
 export default {
     data() {
         return {
-            items: []
+            items: [],
+            page:1
         };
     },
-    components:{DeleteItem},
+    components: { DeleteItem ,InfiniteLoading},
+    methods:{
+        infiniteHandler($state) {
+            axios
+                .get(`/gallery`, {
+                    params: {
+                        page: this.page
+                    }
+                })
+                .then(res => {
+                    if (res.data.data.length) {
+                        this.page += 1;
+                        this.items = this.items.concat(res.data.data);
+                        $state.loaded();
+                    } else {
+                        $state.complete();
+                    }
+                })
+                .catch(err => {
+                    console.log(err.response.data);
+                });
+        }
+    },
     mounted() {
         EventBus.$on("saved-image", item => {
             this.items.unshift(item);
         });
-        EventBus.$on("item-removed",(index) => {
-            this.items.splice(index,1);
-        })
+        EventBus.$on("item-removed", index => {
+            this.items.splice(index, 1);
+        });
     }
 };
 </script>

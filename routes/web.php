@@ -21,18 +21,18 @@
 Route::get('/dashboard', function () {
     return view('dashboard.dashboard');
 })->middleware('auth');
-Route::get('/products/create', 'ProductController@create')->name('products.create');
-Route::post('/products/store', 'ProductController@store')->name('products.store');
+Route::get('/products/create', 'ProductController@create')->name('products.create')->middleware('auth');
+Route::post('/products/store', 'ProductController@store')->name('products.store')->middleware('auth');
 Route::get('/products', 'ProductController@index')->name('products.index');
-Route::get('/products/{product}/edit', 'ProductController@edit')->name('products.edit');
-Route::put('/products/{product}', 'ProductController@update')->name('products.update');
-Route::delete('/products/{product}', 'ProductController@destroy')->name('products.destroy');
+Route::get('/products/{product}/edit', 'ProductController@edit')->name('products.edit')->middleware('auth');
+Route::put('/products/{product}', 'ProductController@update')->name('products.update')->middleware('auth');
+Route::delete('/products/{product}', 'ProductController@destroy')->name('products.destroy')->middleware('auth');
 
 //payments
 
-Route::post('/payments/pay', 'PaymentController@pay')->name('payments.pay');
-Route::get('/payments/approval', 'PaymentController@approval')->name('payments.approval');
-Route::get('/payments/cancelled', 'Paymentcontroller@cancelled')->name('payments.cancelled');
+Route::post('/payments/pay', 'PaymentController@pay')->name('payments.pay')->middleware('auth');
+Route::get('/payments/approval', 'PaymentController@approval')->name('payments.approval')->middleware('auth');
+Route::get('/payments/cancelled', 'Paymentcontroller@cancelled')->name('payments.cancelled')->middleware('auth');
 
 //EJEMPLO DE PAGO CON PAYPAL
 Route::get('/songs', 'SongsController@index');

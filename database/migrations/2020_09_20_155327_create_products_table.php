@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->string('description');
             $table->string('title');
-            $table->float('price');
+            $table->float('price')->default(0);
             $table->text('lyrics')->nullable();
             $table->string('file');
             $table->timestamps();

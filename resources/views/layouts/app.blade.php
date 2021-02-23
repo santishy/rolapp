@@ -53,6 +53,9 @@
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="{{route('videos.create')}}">Enlazar video</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">Registrar</a>
+                            </li>
                         @endauth
                     </ul>
 
@@ -65,7 +68,7 @@
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">Registrar</a>
                                 </li>
                             @endif
                         @else

@@ -2350,7 +2350,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _DeleteItem_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DeleteItem.vue */ "./resources/js/components/dashboard/gallery/DeleteItem.vue");
+/* harmony import */ var vue_infinite_loading__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-infinite-loading */ "./node_modules/vue-infinite-loading/dist/vue-infinite-loading.js");
+/* harmony import */ var vue_infinite_loading__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_infinite_loading__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _DeleteItem_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DeleteItem.vue */ "./resources/js/components/dashboard/gallery/DeleteItem.vue");
 //
 //
 //
@@ -2379,24 +2381,49 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      items: []
+      items: [],
+      page: 1
     };
   },
   components: {
-    DeleteItem: _DeleteItem_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    DeleteItem: _DeleteItem_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    InfiniteLoading: vue_infinite_loading__WEBPACK_IMPORTED_MODULE_0___default.a
+  },
+  methods: {
+    infiniteHandler: function infiniteHandler($state) {
+      var _this = this;
+
+      axios.get("/gallery", {
+        params: {
+          page: this.page
+        }
+      }).then(function (res) {
+        if (res.data.data.length) {
+          _this.page += 1;
+          _this.items = _this.items.concat(res.data.data);
+          $state.loaded();
+        } else {
+          $state.complete();
+        }
+      })["catch"](function (err) {
+        console.log(err.response.data);
+      });
+    }
   },
   mounted: function mounted() {
-    var _this = this;
+    var _this2 = this;
 
     EventBus.$on("saved-image", function (item) {
-      _this.items.unshift(item);
+      _this2.items.unshift(item);
     });
     EventBus.$on("item-removed", function (index) {
-      _this.items.splice(index, 1);
+      _this2.items.splice(index, 1);
     });
   }
 });
@@ -2583,6 +2610,7 @@ __webpack_require__.r(__webpack_exports__);
       this.localProduct.album_id = this.product.album_id;
     } else {
       this.localProduct.album_id = "default";
+      this.localProduct.price = 0;
     }
   },
   props: {
@@ -39174,35 +39202,42 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "bg-white p-4 rounded shadow border-0" }, [
-    _c("table", { staticClass: "table text-center" }, [
-      _vm._m(0),
+  return _c(
+    "div",
+    { staticClass: "bg-white p-4 rounded shadow border-0" },
+    [
+      _c("table", { staticClass: "table text-center" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "tbody",
+          _vm._l(_vm.items, function(item, index) {
+            return _c("tr", { key: item.id }, [
+              _c("td", [_vm._v(_vm._s(item.title))]),
+              _vm._v(" "),
+              _c("td", [
+                _c("img", {
+                  staticClass: "responsive",
+                  staticStyle: { width: "15em" },
+                  attrs: { src: item.url, alt: item.title }
+                })
+              ]),
+              _vm._v(" "),
+              _c(
+                "td",
+                [_c("delete-item", { attrs: { id: item.id, index: index } })],
+                1
+              )
+            ])
+          }),
+          0
+        )
+      ]),
       _vm._v(" "),
-      _c(
-        "tbody",
-        _vm._l(_vm.items, function(item, index) {
-          return _c("tr", { key: item.id }, [
-            _c("td", [_vm._v(_vm._s(item.title))]),
-            _vm._v(" "),
-            _c("td", [
-              _c("img", {
-                staticClass: "responsive",
-                staticStyle: { width: "15em" },
-                attrs: { src: item.url, alt: item.title }
-              })
-            ]),
-            _vm._v(" "),
-            _c(
-              "td",
-              [_c("delete-item", { attrs: { id: item.id, index: index } })],
-              1
-            )
-          ])
-        }),
-        0
-      )
-    ])
-  ])
+      _c("infinite-loading", { on: { infinite: _vm.infiniteHandler } })
+    ],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
