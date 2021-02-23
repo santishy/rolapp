@@ -67,7 +67,7 @@
       </div>
       <div class="form-group">
         <label for="txtPhone">Teléfono</label>
-        <input type="text" id="txtPhone" name="phone" autocomplete="off" maxlength="12" class="form-control form-control-lg" />
+        <input type="text" id="txtPhone" name="phone" autocomplete="off" minlength="10" maxlength="12" class="form-control form-control-lg" />
       </div>
       <div class="form-group">
         <label for="txtSubject">Asunto</label>

@@ -8,7 +8,7 @@
 				<h1 class="mb-4 cursive-custom text-light border-bottom">CANCIONES</h1>
 			</div>
 			@foreach($songs as $song)
-				@include('songs.song',['product' => $song]);
+				@include('songs.song',['product' => $song])
 			@endforeach
 		</div>
 	</div>
