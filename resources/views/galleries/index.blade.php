@@ -8,7 +8,7 @@
 			<h1 class="mb-4 cursive-custom text-light border-bottom">GALERÍA</h1>
 		</div>
 	</div>
-	<div class="d-flex flex-row">
+	<div class="row">
 		@foreach($galleries as $gallery)
 			@include('galleries.gallery',['photo' => $gallery])
 		@endforeach
