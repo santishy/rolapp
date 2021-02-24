@@ -15,8 +15,9 @@ class Product extends Model
 
     public function mergeRequest($data)
     {
+
         return array_merge(
-            request()->all(),
+            array_filter(request()->all()),
             $data
         );
     }
