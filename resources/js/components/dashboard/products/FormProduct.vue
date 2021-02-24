@@ -79,6 +79,7 @@
                             type="file"
                             class="form-control border-0"
                             name="file"
+                            id="song"
                             @change="onFileSelected"
                             placeholder="Archivo..."
                         />
@@ -137,11 +138,14 @@ export default {
             axios["post"](this.url, fd)
                 .then(res => {
                     this.errors = null;
-                    this.localProduct = null;
+                   // this.localProduct = null;
                     this.fileSelected = null;
-                    this.localProduct = res.data.data;
+                  
                     if (this.method === "post") {
+                        this.localProduct = res.data.data;
                         EventBus.$emit("product-created", this.localProduct);
+                        document.getElementById("song").value = "";
+                        this.localProduct = {price:0}
                         this.notification(
                             "Se creo correctamente",
                             "success",

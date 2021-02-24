@@ -2596,6 +2596,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2637,13 +2638,17 @@ __webpack_require__.r(__webpack_exports__);
       if (!!this.fileSelected) fd.append("file", this.fileSelected);
       if (this.method == "put") fd.append("_method", "PUT");
       axios["post"](this.url, fd).then(function (res) {
-        _this.errors = null;
-        _this.localProduct = null;
+        _this.errors = null; // this.localProduct = null;
+
         _this.fileSelected = null;
-        _this.localProduct = res.data.data;
 
         if (_this.method === "post") {
+          _this.localProduct = res.data.data;
           EventBus.$emit("product-created", _this.localProduct);
+          document.getElementById("song").value = "";
+          _this.localProduct = {
+            price: 0
+          };
 
           _this.notification("Se creo correctamente", "success", "Productos");
         } else {
@@ -39582,6 +39587,7 @@ var render = function() {
                     attrs: {
                       type: "file",
                       name: "file",
+                      id: "song",
                       placeholder: "Archivo..."
                     },
                     on: { change: _vm.onFileSelected }

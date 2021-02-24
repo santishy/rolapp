@@ -74,7 +74,7 @@ class ProductController extends Controller
             'title' => $request->id
                 ? "unique:products,title,$request->id|required" : 'unique:products,title|required',
             'description' => 'required',
-            'file' => $request->hasFile('file') ? 'required|file|mimes:mpga,mp2,mp2a,mp3,m2a,m3a' : '',
+            'file' => ($request->hasFile('file') || $request->id == null) ? 'required|file|mimes:mpga,mp2,mp2a,mp3,m2a,m3a' : '',
             'price' => 'required|numeric',
             'album_id' => 'required'
         ], [
