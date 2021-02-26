@@ -37,7 +37,7 @@ class ProductController extends Controller
         //         'errors' => ['file' => 'El archivo es requerido'] 
         //     ],422);
         // }
-        $this->validateProduct($request);
+        //$this->validateProduct($request);
         return ProductResource::make(Product::create(
             array_merge($request->all(), [
                 'file' => request()->file('file')->storeAs('public/songs', $request->file->getClientOriginalName())
