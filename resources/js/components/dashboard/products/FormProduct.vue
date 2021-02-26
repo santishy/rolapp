@@ -133,7 +133,7 @@ export default {
         // Crear producto, se envia al backend  productController->store()
         submit() {
             let fd = new FormData(document.getElementById("formProduct"));
-            if (!!this.fileSelected) fd.append("file", this.fileSelected);
+            //if (!!this.fileSelected) fd.append("file", this.fileSelected);
             if (this.method == "put") fd.append("_method", "PUT");
             axios["post"](this.url, fd)
                 .then(res => {
