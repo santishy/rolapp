@@ -37,7 +37,7 @@
     <h1 class="mb-2 mt-5 text-center font-weight-bold cursive-custom" style="border-bottom:1px solid #fff;">BIOGRAFÍA</h1>
   </div>
   <div class="col col-lg-6 col-12 mt-4 mb-2">
-    <p class="text-justify align-middle font-custom mt-2">Hola¡ mi nombre es Jorge Alberto Alejandre Romero, tengo la bendición de pertenecer a dos hermosos Estados que son: Guadalajara, Jalisco y Michoacán. El primero es donde nací y el segundo donde crecí y actualmente radico.
+    <p class="text-justify align-middle font-custom mt-2">Hola¡ mi nombre es Jorge Alberto Alejandre Romero, tengo la bendición de pertenecer a dos hermosos Estados que son: Jalisco y Michoacán. El primero es donde nací y el segundo donde crecí y actualmente radico.
         Me dedico a dar clases y a componer, esto fue un don que Dios me regalo porque no tengo estudios que me respalden, soy empírico, esto fue desgastante pero nunca me rendí; lo único que te puedo decir es que no abandones tus sueños y metas. </p>
   </div>
   <div class="col col-lg-6 col-12 mb-2 text-center">
