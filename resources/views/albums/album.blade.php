@@ -10,7 +10,7 @@
 						<h5 class="card-title text-center h6">{{$song->title}}</h5>
 					</div>
 					<div class="card-body">
-						<audio controls style="width:100%;">
+						<audio class="custom-audio" data-id="{{$song->id}}" controls style="width:100%;">
 							<source src="/storage/{{ $song->file }}" type="audio/mpeg">
 							Tu navegador no soporta el elementos de audio
 						</audio>

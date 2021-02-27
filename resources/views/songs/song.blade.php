@@ -4,7 +4,7 @@
 			<h5 class="card-title text-center">{{$product->title}}</h5>
 		</div>
 		<div class="card-body">
-			<audio controls style="width:100%;">
+			<audio class="custom-audio" controls style="width:100%;">
 				<source src="{{$product->file}}" type="audio/mpeg">
 				Your browser does not support the audio element.
 			</audio>

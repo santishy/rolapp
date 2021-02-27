@@ -85,7 +85,7 @@
                         />
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-block btn-primary">
+                        <button v-bind:disabled="auxBanDisabled" class="btn btn-block btn-primary">
                             Guardar
                         </button>
                     </div>
@@ -102,7 +102,8 @@ export default {
         return {
             localProduct: {},
             fileSelected: null,
-            errors: null
+            errors: null,
+            auxBanDisabled: false
         };
     },
     created() {
@@ -133,8 +134,10 @@ export default {
         // Crear producto, se envia al backend  productController->store()
         submit() {
             let fd = new FormData(document.getElementById("formProduct"));
+            let vm = this;
             //if (!!this.fileSelected) fd.append("file", this.fileSelected);
             if (this.method == "put") fd.append("_method", "PUT");
+            vm.auxBanDisabled = true;
             axios["post"](this.url, fd)
                 .then(res => {
                     this.errors = null;
@@ -163,7 +166,10 @@ export default {
                     this.errors = Object.values(
                         err.response.data.errors
                     ).flat();
-                });
+                })
+                .then(function() {
+                    vm.auxBanDisabled = false;
+                })
         },
         onFileSelected(event) {
             this.fileSelected = event.target.files[0];

@@ -1,5 +1,21 @@
 $(function() {
-    $( window ).scroll(function() {
+    var audios = $('.custom-audio');
+    
+    /*** Stop all audios except the current play 
+     * @params 'element' (integer) id of audio play.
+    */
+    function StopAllAudios(element) {
+      let audios = document.querySelectorAll('audio:not([data-id="'+ element +'"])');
+      audios.forEach(function(audio) {
+        audio.pause();
+      });
+    }
+
+    $('.custom-audio').on('play',function(e) {
+      StopAllAudios($(this).data('id'));
+    });
+
+    $( window ).on('scroll',function() {
       if ($( this ).scrollTop() > 50) {
           $( ".lnk-up" ).addClass('lnk-one');
           $( ".lnk-up" ).removeClass('lnk-two');
