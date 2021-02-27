@@ -1,7 +1,7 @@
 <div class="row mb-4">
     <div class="col col-12">
 			<h2 class="cursive-custom text-light h1">{{ $album->name }}</h2>
-			<h3 class="cursive-custom text-light h5">Genero: {{ $album->musical_genre }}</h3>
+			<h3 class="cursive-custom text-light h5">Género: {{ $album->musical_genre }}</h3>
 		</div>
 		@foreach($album->songs as $song)
 			<div class="col col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
