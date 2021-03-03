@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="description" content="Jorge Alberto Alejandre cantante y compositor. Composición de canciones de cualquier género, arreglos musicales, composición de canciones por encargo">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title')</title>
@@ -67,7 +67,7 @@
               <a class="nav-link" href="{{ url('gallery') }}">GALERÍA</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://www.facebook.com/JorgeAlbertoAlejandreCompositor" target="_blank" title="Visita mi facebook"><i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i></a>
+              <a class="nav-link" href="https://www.facebook.com/jorgealberto.compositor" target="_blank" title="Visita mi facebook"><i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="https://www.instagram.com/jorgealbertoalejandre/" target="_blank" title="Visita mi instagram"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a>
@@ -95,7 +95,7 @@
       <div class="pre-footer">
         <ul class="ul-custom-footer">
           <li>
-          <a href="https://www.facebook.com/JorgeAlbertoAlejandreCompositor" target="_blank" title="Visita mi facebook"><i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i></a>
+          <a href="https://www.facebook.com/jorgealberto.compositor" target="_blank" title="Visita mi facebook"><i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i></a>
           </li>
           <li>
           <a href="https://www.instagram.com/jorgealbertoalejandre/" target="_blank" title="Visita mi instagram"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a>
