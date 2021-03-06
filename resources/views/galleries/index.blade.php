@@ -1,5 +1,5 @@
 @extends('layouts.site')
-@section('title','Jorge Albero Alejandre Canciones')
+@section('title','Jorge Alberto Alejandre Galería')
 
 @section('content')
 <div class="container">

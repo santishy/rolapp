@@ -1,6 +1,6 @@
 @extends('layouts.site')
 
-@section('title','Jorge Albero Alejandre')
+@section('title','Jorge Alberto Alejandre')
 @section('content')
 
 @if(session()->has('success'))
