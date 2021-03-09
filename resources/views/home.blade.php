@@ -53,6 +53,23 @@
       <li><a href="mailto: domisol_alrja@hotmail.com"><span class="material-icons align-middle">email</span> domisol_alrja@hotmail.com</a></li>
       <li><a href="tel: 3531103303"><span class="material-icons align-middle">local_phone</span> 3531103303</a></li>
     </ul>
+    <hr />
+    <p class="text-justify align-middle text-light font-custom mb-4">También puedes contactarme para contrataciones de los siguientes artistas:</p>
+    <div class="row">
+      <div class="col col-md-6 col-12 text-center mb-2">
+        <figure>
+          <a href="images/cantante-12.jpg" data-lightbox="roadtrip" title="Miguel Zalazar"><img src="images/cantante-1.jpg" class="img-fluid" style="max-height:420px;height:200px;" alt="Miguel Zalazar" /></a>
+          <figcaption><span class="cursive-custom text-light h5">Miguel Zalazar</span></figcaption>
+        </figure>
+      </div>
+      <div class="col col-md-6 col-12 text-center mb-2">
+        <figure>
+        <a href="images/cantante-22.jpg" data-lightbox="roadtrip" title="Francisco Lezama"> <img src="images/cantante-2.jpg" class="img-fluid" style="max-height:420px;height:200px;" alt="Miguel Zalazar" /></a>
+          <figcaption><span class="cursive-custom text-light h5">Francisco Lezama</span></figcaption>
+        </figure>
+      </div>
+    </div>
+    
   </div>
   <div class="col col-lg-7 col-12 text-light" style="border-top:4px solid #111;border-bottom:4px solid #111;background:#000;">
     <form id="frmContact" action="contact-us" method="post" class="mt-4">
