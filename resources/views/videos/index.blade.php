@@ -13,6 +13,6 @@
 			@include('videos.video',['video' => $video])
 		@endforeach
 	</div>
-	
+	{{ $videos->links() }}
 </div>
 @endsection
