@@ -15,7 +15,7 @@ class GalleryController extends Controller
 		if (request()->wantsJson()) {
 			return GalleryResource::collection(Gallery::orderByDesc('id')->paginate(25));
 		}
-		return view('galleries.index', ['galleries' => Gallery::paginate(20)]);
+		return view('galleries.index', ['galleries' => Gallery]);
 	}
 
 	public function create()

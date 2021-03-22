@@ -14,6 +14,6 @@
 		@endforeach
 	</div>
 	<!-- row -->
-	{{ $galleries->links() }}
+	
 </div>
 @endsection
