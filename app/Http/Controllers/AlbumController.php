@@ -14,7 +14,7 @@ class AlbumController extends Controller
             return Album::orderByDesc('id')->paginate(25);
         }
 
-				return view('albums.index',['albums' => Album::paginate(20)]);
+				return view('albums.index',['albums' => Album::orderByDesc('id')]);
     }
 
     public function create()
