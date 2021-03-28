@@ -17,6 +17,6 @@
 		<!-- col-12 -->
 	</div>
 	<!-- row -->
-	{{ $albums->links() }}
+	<!--{{ $albums->links() }}-->
 </div>
 @endsection
