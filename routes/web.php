@@ -52,7 +52,7 @@ Route::delete('/gallery/{item}', 'GalleryController@destroy')->middleware('auth'
 
 //:::::::::::::::::::::VIDEOS::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 Route::get('/videos', 'VideoController@index');
-Route::get('/videoslista/', 'VideoController@custom');
+Route::get('/videoslista', 'VideoController@custom');
 Route::get('/videos/create','VideoController@create')->name('videos.create')->middleware('auth');
 Route::post('/videos','VideoController@store')->name('videos.store')->middleware('auth');
 Route::delete('/videos/{item}','VideoController@destroy')->name('videos.destroy')->middleware('auth');
