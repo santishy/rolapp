@@ -60,7 +60,7 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ url('albums') }}">CANCIONES</a>
             </li>
-            <li class="nav-item d-none">
+            <li class="nav-item d-nones">
               <a class="nav-link" href="{{ url('videos') }}">VIDEOS</a>
             </li>
             <li class="nav-item d-none">
