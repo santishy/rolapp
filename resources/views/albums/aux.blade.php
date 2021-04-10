@@ -167,14 +167,7 @@
 							<p class="mt-2 card-text text-dark font-weight-bold text-justify h6 d-none"></p>
 						</div>
 					</div>
-				</div>     
-			</div>
-
-			<div class="row mb-4">
-				<div class="col col-12">
-					<h2 class="cursive-custom text-light h1">Única He Indispensable</h2>
-					<h3 class="cursive-custom text-light h5">Género: variado</h3>
-				</div> 
+				</div>    
 
 				<div class="col col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
 					<div class="card">
@@ -183,7 +176,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="10" controls style="width:100%;">
-								<source src="/storage/public/songs/10 Tu Te Entrgaste A Mí.mp3" type="audio/mpeg">
+								<source src="/storage/public/songs/10 Eres Tú.mp3" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
@@ -191,7 +184,14 @@
 							<p class="mt-2 card-text text-dark font-weight-bold text-justify h6 d-none"></p>
 						</div>
 					</div>
-				</div>     
+				</div>      
+			</div>
+
+			<div class="row mb-4">
+				<div class="col col-12">
+					<h2 class="cursive-custom text-light h1">Única He Indispensable</h2>
+					<h3 class="cursive-custom text-light h5">Género: variado</h3>
+				</div> 
 
 				<div class="col col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
 					<div class="card">
