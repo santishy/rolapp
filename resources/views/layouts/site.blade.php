@@ -57,13 +57,13 @@
             <li class="nav-item">
               <a class="nav-link nav-link-custom" data-link="divContact" href="{{ url('/') }}#divContact">CONTACTO</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item d-none">
               <a class="nav-link" href="{{ url('albums') }}">CANCIONES</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item d-none">
               <a class="nav-link" href="{{ url('videos') }}">VIDEOS</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item d-none">
               <a class="nav-link" href="{{ url('gallery') }}">GALERÍA</a>
             </li>
             <li class="nav-item">
