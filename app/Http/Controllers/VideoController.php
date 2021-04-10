@@ -14,7 +14,7 @@ class VideoController extends Controller
         {
             return Video::orderByDesc('id')->paginate(25);
         }
-		return view('videos.index', ['videos' => Video::paginate(20)]);
+		return view('videos.index'); //['videos' => Video::paginate(20)]
 	}
 
 	public function create()
