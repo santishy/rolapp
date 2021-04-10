@@ -23,7 +23,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="1" controls style="width:100%;">
-								<source src="/storage/'01 Como Juan Diego.mp3'" type="audio/mpeg">
+								<source src="/storage/public/songs/01 Como Juan Diego.mp3" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
@@ -40,7 +40,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="2" controls style="width:100%;">
-								<source src="/storage/'02 Gracias Padre.mp3'" type="audio/mpeg">
+								<source src="/storage/public/songs/02 Gracias Padre.mp3" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
@@ -57,7 +57,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="3" controls style="width:100%;">
-								<source src="/storage/'03 Has Tu Obra.mp3'" type="audio/mpeg">
+								<source src="/storage/public/songs/03 Has Tu Obra.mp3" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
@@ -74,7 +74,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="4" controls style="width:100%;">
-								<source src="/storage/'04 Quiero Entregarme.mp3'" type="audio/mpeg">
+								<source src="/storage/public/songs/04 Quiero Entregarme.mp3" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
@@ -91,7 +91,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="5" controls style="width:100%;">
-								<source src="/storage/'05 Meditando.mp3'" type="audio/mpeg">
+								<source src="/storage/public/songs/05 Meditando.mp3" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
@@ -108,7 +108,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="6" controls style="width:100%;">
-								<source src="/storage/'06 Oh Jesus.mp3'" type="audio/mpeg">
+								<source src="/storage/public/songs/06 Oh Jesus.mp3" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
@@ -125,7 +125,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="7" controls style="width:100%;">
-								<source src="/storage/'07 Que Quieres De Mí.mp3'" type="audio/mpeg">
+								<source src="/storage/public/songs/07 Que Quieres De Mí.mp3" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
@@ -142,7 +142,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="8" controls style="width:100%;">
-								<source src="/storage/'08 Solo Por mí.mp3'" type="audio/mpeg">
+								<source src="/storage/public/songs/08 Solo Por mí.mp3" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
@@ -159,7 +159,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="9" controls style="width:100%;">
-								<source src="/storage/'09 Ven Quedate Aquí.mp3' " type="audio/mpeg">
+								<source src="/storage/public/songs/09 Ven Quedate Aquí.mp3" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
