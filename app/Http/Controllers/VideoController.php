@@ -18,6 +18,11 @@ class VideoController extends Controller
 		return view('videos.aux');
 	}
 
+	public function custom()
+	{
+		return view('videos.aux');
+	}
+
 	public function create()
 	{
 		return view('dashboard.videos.create');
