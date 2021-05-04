@@ -23,7 +23,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="1" controls style="width:100%;">
-								<source src="/storage/public/songs/01 Como Juan Diego.mp3" type="audio/mpeg">
+								<source src="" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
@@ -40,7 +40,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="2" controls style="width:100%;">
-								<source src="/storage/public/songs/02 Gracias Padre.mp3" type="audio/mpeg">
+								<source src="" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
@@ -57,7 +57,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="3" controls style="width:100%;">
-								<source src="/storage/public/songs/03 Has Tu Obra.mp3" type="audio/mpeg">
+								<source src="" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
@@ -74,7 +74,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="4" controls style="width:100%;">
-								<source src="/storage/public/songs/04 Quiero Entregarme.mp3" type="audio/mpeg">
+								<source src="" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
@@ -91,7 +91,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="5" controls style="width:100%;">
-								<source src="/storage/public/songs/05 Meditando.mp3" type="audio/mpeg">
+								<source src="" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
@@ -108,7 +108,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="6" controls style="width:100%;">
-								<source src="/storage/public/songs/06 Oh Jesus.mp3" type="audio/mpeg">
+								<source src="" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
@@ -125,7 +125,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="7" controls style="width:100%;">
-								<source src="/storage/public/songs/07 Que Quieres De Mí.mp3" type="audio/mpeg">
+								<source src="" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
@@ -142,7 +142,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="8" controls style="width:100%;">
-								<source src="/storage/public/songs/08 Solo Por mí.mp3" type="audio/mpeg">
+								<source src="" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
@@ -159,7 +159,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="9" controls style="width:100%;">
-								<source src="/storage/public/songs/09 Ven Quedate Aquí.mp3" type="audio/mpeg">
+								<source src="" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
@@ -176,7 +176,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="10" controls style="width:100%;">
-								<source src="/storage/public/songs/10 Eres Tú.mp3" type="audio/mpeg">
+								<source src="" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
@@ -200,7 +200,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="11" controls style="width:100%;">
-								<source src="/storage/public/songs/10 Tu Te Entrgaste A Mí.mp3" type="audio/mpeg">
+								<source src="" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
@@ -217,7 +217,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="12" controls style="width:100%;">
-								<source src="/storage/public/songs/11 Como Rosa En El Desierto.mp3" type="audio/mpeg">
+								<source src="" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
@@ -234,7 +234,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="13" controls style="width:100%;">
-								<source src="/storage/public/songs/12 Tus Decisiones.mp3" type="audio/mpeg">
+								<source src="" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
@@ -251,7 +251,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="14" controls style="width:100%;">
-								<source src="/storage/public/songs/13 No He Logrado.mp3" type="audio/mpeg">
+								<source src="" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
@@ -268,7 +268,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="15" controls style="width:100%;">
-								<source src="/storage/public/songs/2 Lo Que Te Pedí.mp3" type="audio/mpeg">
+								<source src="" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
@@ -285,7 +285,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="16" controls style="width:100%;">
-								<source src="/storage/public/songs/3 Sin Ti No Puedo.mp3" type="audio/mpeg">
+								<source src="" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
@@ -302,7 +302,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="17" controls style="width:100%;">
-								<source src="/storage/public/songs/4 Quedate en mi.mp3" type="audio/mpeg">
+								<source src="" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
@@ -319,7 +319,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="18" controls style="width:100%;">
-								<source src="/storage/public/songs/5 La Persona Ideal.mp3" type="audio/mpeg">
+								<source src="" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
@@ -336,7 +336,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="19" controls style="width:100%;">
-								<source src="/storage/public/songs/6 Falsa pasion.mp3" type="audio/mpeg">
+								<source src="" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
@@ -353,7 +353,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="20" controls style="width:100%;">
-								<source src="/storage/public/songs/7 Somos 2.mp3" type="audio/mpeg">
+								<source src="" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
@@ -370,7 +370,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="21" controls style="width:100%;">
-								<source src="/storage/public/songs/8 El Que Mas Te ha Amado.mp3" type="audio/mpeg">
+								<source src="" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
@@ -387,7 +387,7 @@
 						</div>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="22" controls style="width:100%;">
-								<source src="/storage/public/songs/9 Unica He Indispensable.mp3" type="audio/mpeg">
+								<source src="" type="audio/mpeg">
 								Tu navegador no soporta el elementos de audio
 							</audio>
 						</div>
