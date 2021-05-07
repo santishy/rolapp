@@ -74,18 +74,18 @@ class ProductController extends Controller
             'title' => $request->id
                 ? "unique:products,title,$request->id|required" : 'unique:products,title|required',
             'description' => 'required',
-            'file' => $request->id ? 'file|mimes:mpga,mp2,mp2a,mp3,m2a,m3a' : 'required|file|mimes:mpga,mp2,mp2a,mp3,m2a,m3a',
+           // 'file' => $request->id ? 'file|mimes:audio/mp3' : 'required|file|mimes:audio/mp3',
             'price' => 'required|numeric',
             'album_id' => 'required'
         ], [
             'description.required' => 'La descripción es requerida',
-            'file.required' => 'El archivo de audio es requerido',
+           // 'file.required' => 'El archivo de audio es requerido',
             'title.required' => 'El titulo es requerido',
             'title.unique' => 'El título ya existe en la base de datos',
             'price.required' => 'El precio es requerido',
             'price.numeric' => 'El precio debe ser un valor númerico',
-            'file.file' => 'El archivo de audio debe ser archivo',
-            'file.mimes' => 'El archivo no tiene un formato valido',
+            //'file.file' => 'El archivo de audio debe ser archivo',
+            //'file.mimes' => 'El archivo no tiene un formato valido',
             'album_id.required' => 'El album es requerido'
         ]);
     }

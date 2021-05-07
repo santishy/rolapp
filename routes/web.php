@@ -30,9 +30,9 @@ Route::delete('/products/{product}', 'ProductController@destroy')->name('product
 
 //payments
 
-Route::post('/payments/pay', 'PaymentController@pay')->name('payments.pay')->middleware('auth');
-Route::get('/payments/approval', 'PaymentController@approval')->name('payments.approval')->middleware('auth');
-Route::get('/payments/cancelled', 'Paymentcontroller@cancelled')->name('payments.cancelled')->middleware('auth');
+Route::post('/payments/pay', 'PaymentController@pay')->name('payments.pay');
+Route::get('/payments/approval', 'PaymentController@approval')->name('payments.approval');
+Route::get('/payments/cancelled', 'Paymentcontroller@cancelled')->name('payments.cancelled');
 
 //EJEMPLO DE PAGO CON PAYPAL
 Route::get('/songs', 'SongsController@index');

@@ -13,9 +13,8 @@ class AlbumController extends Controller
         if (request()->wantsJson()) {
             return Album::orderByDesc('id')->paginate(25);
         }
-
-				//return view('albums.index',['albums' => Album::paginate(20)]);
-				return view('albums.aux');
+        return view('albums.index', ['albums' => Album::paginate(20)]);
+        //return view('albums.aux');
     }
 
     public function create()
