@@ -20,9 +20,10 @@ class PaymentController extends Controller
 
 
         if ($payment->status == 'COMPLETED') {
-            return  event(new MakingPayment($payment));
+            event(new MakingPayment($payment));
+            return redirect('/'); //poner una ruta o vista donde diamos que ya pago
         }
-        return redirect('home'); // AQUI PONER UNA VISTA DE QUE NO SE PUDO HACER LA COMPRA CORRECTAMENTE E INTENTAR DE NUEVO 
+        return redirect('/'); // AQUI PONER UNA VISTA DE QUE NO SE PUDO HACER LA COMPRA CORRECTAMENTE E INTENTAR DE NUEVO 
 
     }
     public function cancelled()

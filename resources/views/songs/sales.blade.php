@@ -31,7 +31,7 @@
                             <input type="hidden" value="{{$product->price}}" name="value">
                             <input type="hidden" value="{{$product->id}}" name="product_id">
                             @csrf
-                            <button class="btn btn-default" type="submit">PAYPAL</button>
+                            <button class="btn bg-white " type="submit">PAYPAL</button>
                         </form>
                     </div>
                 </div>
