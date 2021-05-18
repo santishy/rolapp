@@ -70,7 +70,7 @@
               <a class="nav-link" href="{{ url('albums') }}">CANCIONES</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url('albums') }}">TIENDA</a>
+              <a class="nav-link" href="{{ url('songs') }}">TIENDA</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="https://www.facebook.com/jorgealberto.compositor" target="_blank" title="Visita mi facebook"><i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i></a>

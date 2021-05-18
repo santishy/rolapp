@@ -5,7 +5,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col col-12 text-center">
-			<h1 class="mb-4 cursive-custom text-light border-bottom">ALBUMS</h1>
+			<h1 class="mb-4 cursive-custom text-light border-bottom">ALABANZAS</h1>
 		</div>
 	</div>
 	<div class="row">

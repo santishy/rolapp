@@ -49,27 +49,25 @@
   <div class="col col-lg-5 col-12" style="background:#111;border:4px solid #111;">
     <h1 class="mb-4 mt-5 text-center text-light cursive-custom" style="border-bottom:1px solid #fff;">CONTACTO</h1>
     <p class="text-justify align-middle text-light font-custom mb-4">Si deseas ponerte en contacto conmigo para contrataciones, eventos o simplemente quieres saludar puedes contactarme a travéz de mi correo eléctronio y/o teléfono, o si lo prefieres dejame un mensaje, te atenderé a la brevedad</p>
-    <ul class="ul-custom text-secondary mt-5">
+    <ul class="ul-custom text-secondary mt-1">
       <li><a href="mailto: domisol_alrja@hotmail.com"><span class="material-icons align-middle">email</span> domisol_alrja@hotmail.com</a></li>
       <li><a href="tel: 3531103303"><span class="material-icons align-middle">local_phone</span> 3531103303</a></li>
     </ul>
-    <hr />
     <p class="text-justify align-middle text-light font-custom mb-4">También puedes contactarme para contrataciones de los siguientes artistas:</p>
     <div class="row">
       <div class="col col-md-6 col-12 text-center mb-2">
         <figure>
-          <a href="images/cantante-12.jpg" data-lightbox="roadtrip" title="Miguel Zalazar"><img src="images/cantante-1.jpg" class="img-fluid" style="max-height:420px;height:200px;" alt="Miguel Zalazar" /></a>
+          <a href="images/cantante-12.jpg" data-lightbox="roadtrip" title="Miguel Zalazar"><img src="images/cantante-1.jpg" class="img-fluid rounded" style="max-height:420px;height:200px;" alt="Miguel Zalazar" /></a>
           <figcaption><span class="cursive-custom text-light h5">Miguel Zalazar</span></figcaption>
         </figure>
       </div>
       <div class="col col-md-6 col-12 text-center mb-2">
         <figure>
-        <a href="images/cantante-22.jpg" data-lightbox="roadtrip" title="Francisco Lezama"> <img src="images/cantante-2.jpg" class="img-fluid" style="max-height:420px;height:200px;" alt="Miguel Zalazar" /></a>
+        <a href="images/cantante-22.jpg" data-lightbox="roadtrip" title="Francisco Lezama"> <img src="images/cantante-2.jpg" class="img-fluid rounded-circle" style="max-height:420px;height:200px;" alt="Miguel Zalazar" /></a>
           <figcaption><span class="cursive-custom text-light h5">Francisco Lezama</span></figcaption>
         </figure>
       </div>
     </div>
-    
   </div>
   <div class="col col-lg-7 col-12 text-light" style="border-top:4px solid #111;border-bottom:4px solid #111;background:#000;">
     <form id="frmContact" action="contact-us" method="post" class="mt-4">

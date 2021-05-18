@@ -5,7 +5,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col col-12 text-center">
-				<h1 class="mb-4 cursive-custom text-light border-bottom">CANCIONES</h1>
+				<h1 class="mb-4 cursive-custom text-light border-bottom">TIENDA</h1>
 			</div>
 			@foreach($songs as $song)
 				@include('songs.song',['product' => $song])

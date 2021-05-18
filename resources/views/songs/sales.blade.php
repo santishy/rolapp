@@ -6,11 +6,11 @@
 <div class="container">
     <div class="row">
         <div class="col col-12 text-center">
-            <h1 class="mb-4 cursive-custom text-light border-bottom">CANCIONES</h1>
+            <h1 class="mb-4 cursive-custom text-light border-bottom">TIENDA</h1>
         </div>
         @foreach((object)$albums->resolve() as $album)
         <div>
-            album : {{$album['name']}} | genero: {{$album['musical_genre']}}
+            album : {{$album['name']}} | género: {{$album['musical_genre']}}
         </div>
             
             @foreach ($album['products'] as $product )
