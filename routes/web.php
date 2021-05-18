@@ -59,6 +59,7 @@ Route::delete('/videos/{item}','VideoController@destroy')->name('videos.destroy'
 
 //:::::::::::::::::::::::::::ALBUMS:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 Route::get('/albums', 'AlbumController@index');
+Route::get('/alabanzas', 'AlbumController@religious');
 Route::get('/albums/create','AlbumController@create')->name('albums.create')->middleware('auth');
 Route::post('/albums','AlbumController@store')->name('albums.store')->middleware('auth');
 Route::delete('/albums/{item}','AlbumController@destroy')->name('albums.destroy')->middleware('auth');

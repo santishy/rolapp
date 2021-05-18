@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-//use App\Video;
+use App\Video;
 
 class VideoController extends Controller
 {
@@ -15,7 +15,8 @@ class VideoController extends Controller
             return Video::orderByDesc('id')->paginate(25);
         }
 		//return view('videos.index'); //['videos' => Video::paginate(20)]
-		return view('videos.aux');
+		return view('videos.index');
+		//return view('videos.index', ['videos' => Video::paginate(20)]);
 	}
 
 	public function custom()

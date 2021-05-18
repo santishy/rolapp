@@ -22,6 +22,11 @@ class AlbumController extends Controller
         return view('dashboard.albums.create');
     }
 
+    public function religious() {
+        $albums = Album::with('songs')->where('is_religious',true)->get();
+        return view('albums.religious', ['albums' => $albums]);
+    }
+
     public function store(Request $request)
     {
         $request->validate([
