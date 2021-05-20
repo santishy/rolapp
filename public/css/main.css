@@ -29,6 +29,10 @@ body, html{
   font-family: 'Montserrat', sans-serif !important;
 }
 
+.col-custom-height {
+  min-height: 400px !important;
+}
+
 .cursive-custom{
   font-family: 'Damion', cursive !important;
 }

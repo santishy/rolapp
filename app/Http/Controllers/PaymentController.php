@@ -21,7 +21,7 @@ class PaymentController extends Controller
 
         if ($payment->status == 'COMPLETED') {
             event(new MakingPayment($payment));
-            return redirect('/'); //poner una ruta o vista donde diamos que ya pago
+            return redirect()->route('approval');
         }
         return redirect('/'); // AQUI PONER UNA VISTA DE QUE NO SE PUDO HACER LA COMPRA CORRECTAMENTE E INTENTAR DE NUEVO 
 

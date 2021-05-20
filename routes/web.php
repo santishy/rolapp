@@ -33,6 +33,12 @@ Route::delete('/products/{product}', 'ProductController@destroy')->name('product
 Route::post('/payments/pay', 'PaymentController@pay')->name('payments.pay');
 Route::get('/payments/approval', 'PaymentController@approval')->name('payments.approval');
 Route::get('/payments/cancelled', 'Paymentcontroller@cancelled')->name('payments.cancelled');
+Route::get('/approval', function () {
+	return view('payments.approved');
+})->name('approval');
+Route::get('/failed', function () {
+	return view('payments.failed');
+})->name('fail');
 
 //EJEMPLO DE PAGO CON PAYPAL
 Route::get('/songs', 'SongsController@index');
