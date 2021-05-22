@@ -30,6 +30,6 @@ class PaymentReceived extends Mailable
      */
     public function build()
     {
-        return $this->view('mails.payments.received');
+        return $this->subject('Gracias por tu compra')->view('mails.payments.received');
     }
 }

@@ -7,10 +7,10 @@
     <title>Pago recibido</title>
 </head>
 <body>
-    <h1>Pago recibido</h1>
-    <p>Tú pago a sido recibido satisfactoriamente</p>
-    Puedes descargar la cancion en el siguiente link 
-
-    <a href="{{route('songs',$payment->id)}}">Ir a descarga</a>
+    <h1>¡Tu pago ha sido recibido satisfactoriamente!</h1>
+    <p>Espero que disfrutes mi material discográfico, puedes hacer la descarga en el siguiente link:
+    <a href="{{route('songs',$payment->id)}}">Ir a descarga</a></p>
+    <p>Te envío saludos y bendiciones</p>
+    <p><a href="www.jorgealbertoalejandre.com">Jorge Alberto Alejandre</a></p>
 </body>
 </html>
