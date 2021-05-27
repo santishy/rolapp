@@ -29,6 +29,11 @@ body, html{
   font-family: 'Montserrat', sans-serif !important;
 }
 
+.btn-paypal {
+  background-color: #0097D8 !important;
+  color:#fff !important;
+}
+
 .col-custom-height {
   min-height: 400px !important;
 }
