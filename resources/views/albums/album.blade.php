@@ -11,7 +11,7 @@
 					</div>
 					<div class="card-body">
 						<audio class="custom-audio" data-id="{{$song->id}}" controls style="width:100%;">
-							<source src="/storage/{{ $song->file }}" type="audio/mpeg">
+							<source src="/storage/songs/{{ $song->file }}" type="audio/mpeg">
 							Tu navegador no soporta el elementos de audio
 						</audio>
 					</div>
