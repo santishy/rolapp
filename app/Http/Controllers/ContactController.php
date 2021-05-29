@@ -17,6 +17,6 @@ class ContactController extends Controller
 				return back()->withErrors(['No fue posible enviar tu mensaje, inténtalo nuevamente más tarde']);
 			}
 			
-			return back()->with('success','¡Gracias por contactarme!, te responderé a la brevedad');
+			return back()->with('success','¡Muchas gracias por contactarme!, te responderé a la brevedad');
 		}
 }
