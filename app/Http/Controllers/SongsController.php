@@ -20,7 +20,7 @@ class SongsController extends Controller
                         ->paginate(20);
                 }
             ]
-        )->paginate();
+        )->where('is_premium',true)->paginate();
         $albums =  AlbumResource::collection($albunes);
      
         return view('songs.sales',compact('albums'));
