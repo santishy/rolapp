@@ -18,9 +18,7 @@
 
 
 // products in dashboard
-Route::get('/dashboard', function () {
-    return view('dashboard.dashboard');
-})->middleware('auth');
+Route::get('/dashboard', 'DashboardController@index')->middleware('auth');
 Route::get('/products/create', 'ProductController@create')->name('products.create')->middleware('auth');
 Route::post('/products/store', 'ProductController@store')->name('products.store')->middleware('auth');
 Route::get('/products', 'ProductController@index')->name('products.index');
