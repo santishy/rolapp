@@ -34,10 +34,10 @@ Route::post('/payments/pay', 'PaymentController@pay')->name('payments.pay');
 Route::get('/payments/approval', 'PaymentController@approval')->name('payments.approval');
 Route::get('/payments/cancelled', 'Paymentcontroller@cancelled')->name('payments.cancelled');
 Route::get('/approval', function () {
-	return view('payments.approved');
+    return view('payments.approved');
 })->name('approval');
 Route::get('/failed', function () {
-	return view('payments.failed');
+    return view('payments.failed');
 })->name('fail');
 
 //EJEMPLO DE PAGO CON PAYPAL
@@ -59,16 +59,16 @@ Route::delete('/gallery/{item}', 'GalleryController@destroy')->middleware('auth'
 //:::::::::::::::::::::VIDEOS::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 Route::get('/videos', 'VideoController@index');
 Route::get('/videoslista', 'VideoController@custom');
-Route::get('/videos/create','VideoController@create')->name('videos.create')->middleware('auth');
-Route::post('/videos','VideoController@store')->name('videos.store')->middleware('auth');
-Route::delete('/videos/{item}','VideoController@destroy')->name('videos.destroy')->middleware('auth');
+Route::get('/videos/create', 'VideoController@create')->name('videos.create')->middleware('auth');
+Route::post('/videos', 'VideoController@store')->name('videos.store')->middleware('auth');
+Route::delete('/videos/{item}', 'VideoController@destroy')->name('videos.destroy')->middleware('auth');
 
 //:::::::::::::::::::::::::::ALBUMS:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 Route::get('/albums', 'AlbumController@index');
 Route::get('/alabanzas', 'AlbumController@religious');
-Route::get('/albums/create','AlbumController@create')->name('albums.create')->middleware('auth');
-Route::post('/albums','AlbumController@store')->name('albums.store')->middleware('auth');
-Route::delete('/albums/{item}','AlbumController@destroy')->name('albums.destroy')->middleware('auth');
+Route::get('/albums/create', 'AlbumController@create')->name('albums.create')->middleware('auth');
+Route::post('/albums', 'AlbumController@store')->name('albums.store')->middleware('auth');
+Route::delete('/albums/{item}', 'AlbumController@destroy')->name('albums.destroy')->middleware('auth');
 
 Route::post('/contact-us', 'ContactController@sendContact');
 
