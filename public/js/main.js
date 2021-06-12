@@ -1,7 +1,7 @@
 $(function() {
     var audios = $('.custom-audio');
     
-    /*** Stop all audios except the current play 
+    /*** Stop all audios except the current playing
      * @params 'element' (integer) id of audio play.
     */
     function StopAllAudios(element) {
