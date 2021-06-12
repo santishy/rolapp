@@ -25,7 +25,7 @@ class Paypal extends Model
     }
     public function handlePayment(Request $request)
     {
-        $order = $this->createOrder($request->value, 'mxn');
+        $order = $this->createOrder($request->value, 'usd');
         $links = collect($order->links);
         $approve = $links->where('rel', 'approve')->first();
         session()->put('order_id', $order->id);
