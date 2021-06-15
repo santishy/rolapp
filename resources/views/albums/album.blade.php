@@ -7,7 +7,7 @@
 			<div class="col col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
 				<div class="card">
 					<div class="card-header bg-dark text-light">
-						<h5 class="card-title text-center h6">{{$song->title}}</h5>
+						<h5 class="card-title text-center h6">{{$song->description}}</h5>
 					</div>
 					<div class="card-body">
 						<audio class="custom-audio" data-id="{{$song->id}}" controls style="width:100%;">

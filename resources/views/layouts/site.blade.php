@@ -101,6 +101,12 @@
       <div class="pre-footer">
         <ul class="ul-custom-footer">
           <li>
+            <a href="#" data-toggle="modal" data-target="#modalTerms" title="Ver términos y condiciones">Términos y condiciones |</a>
+          </li>
+          <li>
+            <a href="#" data-toggle="modal" data-target="#modalPrivacity" title="Ver aviso de privacidad">Aviso de privacidad |</a>
+          </li>
+          <li>
           <a href="https://www.facebook.com/jorgealberto.compositor" target="_blank" title="Visita mi facebook"><i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i></a>
           </li>
           <li>
@@ -118,7 +124,85 @@
         <span  class="text-light float-md-right">Powered by: <a href="#" class="text-info font-weight-bold">NS</a></span>
       </div>
     </footer>
-    
+    <!-- modals -->
+    <div class="modal" id="modalTerms" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Términos Y Condiciones</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="font-weight-bold">Derechos de propiedad.</p>
+            <p class="paragraph-custom">Este sitio web es propiedad y esta operado por Jorge Alberto Alejandre, quien es dueño único y exclusivo de todos los derechos
+            ,títulos y contenido gráfico (imágenes, logotipos, audios, videos , etc) del sitio web.
+            </p>
+            <p class="font-weight-bold">Cómo comprar.</p>
+            <p class="paragraph-custom">
+              Para realizar una compra no es necesario registrarse como cliente en el sitio web.
+            </p>
+            <p class="font-weight-bold">Condiciones comerciales.</p>
+            <p class="paragraph-custom">
+              Los precios que cobramos para nuestros productos se enumeran en el sitio web.Nos reservamos el derecho de cambiar nuestros precios para los productos que se muestran en cualquier momento y de corregir los errores de precios que puedan ocurrir inadvertidamente.
+              El precio manejado con los productos incluye el costo del impuesto IVA.
+            </p>
+            <p class="font-weight-bold">Derecho a cambiar y modificar los Términos.</p>
+            <p class="paragraph-custom">
+              Nos reservamos el derecho de modificar estos térmnos de vez en cuando a nuestra entera discreción. 
+              Por lo tanto debes revisar esta sección periódicamente.
+              Te informamos que al acceder a nuestro sitio web www.jorgealbertoalejandre.com y realizar alguna transacción confirmas que estás enterado de su términos y los aceptas, en caso contrario te pedimos abstenerte de la utilización y realización de alguna transacción en virtud de la aceptación de los mismos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="modalPrivacity" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Aviso De Privacidad</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="paragraph-custom">
+              Jorge Alberto Alejandre protege y salvaguarda sus datos personales para evitar el daño, pérdida,
+              destrucción, alteración así como el tratamiento no autorizado.
+              Así mismo no se utilizarán sus datos personales para que sean divulgados bajo ninguna circunstancia.
+            </p>
+            <p class="paragraph-custom">
+              Sus datos personales, serán utilizados para las siguientes finalidades:
+              <ul>
+                <li>
+                  Registrar los datos de las compras
+                </li>
+                <li>
+                  Notificar acerca de promociones y/o contenido nuevo en el sitio web.
+                </li>
+              </ul>
+            </p>
+            <p class="paragraph-custom">
+              En caso de estar suscrito a las notificaciones, podrá cancelar dicha suscripción en el momento que así lo desee.
+            </p>
+            <p class="paragraph-custom">
+              El presente Aviso de Privacidad podrá ser modificado en el futuro. En todo caso, cualquier modificación al mismo se hará de su conocimiento 
+              mediante el envío de un correo electrónico a la cuenta que usted nos proporcionó al momento de suscribirse y/o 
+              mediante la publicación del mismo en el sitio web www.jorgealbertoalejandre.com. <br />
+              No seremos responsables en el caso de que usted no reciba la notificación de cambio en el Aviso de Privacidad
+              por causa de algún problema con su cuenta de correo eléctronico o de transmisión de datos por internet.
+              Sin embargo, por su seguridad, el Aviso de Privacidad vigente estará en todo momento disponible en el sitio web
+              www.jorgealbertoalejandre.com.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modals -->
   </div>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
 			  crossorigin="anonymous"></script>   

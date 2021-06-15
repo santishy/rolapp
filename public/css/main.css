@@ -130,6 +130,10 @@ iframe {
   border-color:#555 !important;
 }
 
+.paragraph-custom {
+  text-align:justify;text-justify: inter-character;text-rendering:optimizeLegibility !important;
+}
+
 .row-custom {
   height:auto;
   min-height:95vh;
