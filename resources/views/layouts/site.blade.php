@@ -104,16 +104,18 @@
             <a href="#" data-toggle="modal" data-target="#modalTerms" title="Ver términos y condiciones">Términos y condiciones |</a>
           </li>
           <li>
-            <a href="#" data-toggle="modal" data-target="#modalPrivacity" title="Ver aviso de privacidad">Aviso de privacidad |</a>
+            <a href="#" data-toggle="modal" data-target="#modalPrivacity" title="Ver aviso de privacidad">Aviso de privacidad </a>
+          </li>
+        </ul>
+        <ul class="ul-custom-footer">
+          <li>
+            <a href="https://www.facebook.com/jorgealberto.compositor" target="_blank" title="Visita mi facebook"><i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i></a>
           </li>
           <li>
-          <a href="https://www.facebook.com/jorgealberto.compositor" target="_blank" title="Visita mi facebook"><i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/jorgealbertoalejandre/" target="_blank" title="Visita mi instagram"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a>
           </li>
           <li>
-          <a href="https://www.instagram.com/jorgealbertoalejandre/" target="_blank" title="Visita mi instagram"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a>
-          </li>
-          <li>
-          <a href="https://www.youtube.com/channel/UCtUXTtUHVl_bvpowqM0FaLQ"  target="_blank" title="Visita mi canal en youtube"><i class="fa fa-youtube-play fa-lg" aria-hidden="true"></i></a>
+            <a href="https://www.youtube.com/channel/UCtUXTtUHVl_bvpowqM0FaLQ"  target="_blank" title="Visita mi canal en youtube"><i class="fa fa-youtube-play fa-lg" aria-hidden="true"></i></a>
           </li>
           <li><a href="https://wa.me/5213531103303" target="_blank" title="Contáctame por whatsapp"><i class="fa fa-whatsapp fa-lg" aria-hidden="true"></i></a></li>
         </ul>
@@ -154,6 +156,9 @@
               Por lo tanto debes revisar esta sección periódicamente.
               Te informamos que al acceder a nuestro sitio web www.jorgealbertoalejandre.com y realizar alguna transacción confirmas que estás enterado de su términos y los aceptas, en caso contrario te pedimos abstenerte de la utilización y realización de alguna transacción en virtud de la aceptación de los mismos.
             </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Aceptar</button>
           </div>
         </div>
       </div>
@@ -197,6 +202,9 @@
               Sin embargo, por su seguridad, el Aviso de Privacidad vigente estará en todo momento disponible en el sitio web
               www.jorgealbertoalejandre.com.
             </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Aceptar</button>
           </div>
         </div>
       </div>
