@@ -17,7 +17,9 @@
 					</div>
 					<div class="card-footer">
 						<p class="mt-2 card-text text-dark font-weight-bold text-justify h6 d-none">{{$song->description}}</p>
-						<a href="storage/{{ $song->file }}" class="btn btn-success btn-block mt-4" download> Descargar</a>
+						@if ($album->is_religious)
+							<a href="storage/{{ $song->file }}" class="btn btn-success btn-block mt-4" download> Descargar</a>
+						@endif
 					</div>
 				</div>
 			</div>
