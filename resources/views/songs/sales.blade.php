@@ -13,7 +13,7 @@
 						<h5 class="card-title text-center mt-2 font-weight-bold">MIX DE MUESTRA</h5>
 						<div class="card-body">
 							<audio class="custom-audio" data-id="0" controls style="width:100%;">
-								<source src="canciones/mix.mp3" type="audio/mpeg">
+								<source src="canciones/nuevo-mix.mp3" type="audio/mpeg">
 							 Tu navegador no soporta elementos de audio.
 							</audio>
 						</div>
