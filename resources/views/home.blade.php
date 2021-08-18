@@ -25,7 +25,7 @@
   <div class="col col-lg-5 col-md-6 col-12 text-center">
     <img class="img-fluid align-middle" src="./images/logo.png" alt="logo" />
     <h1 class="mt-4 cursive-custom text-light">BIENVENIDO A MI PÁGINA</h1>
-    <h2 class="text-light cursive-custom">Espero te guste mi material discográfico</h2>
+    <h2 class="text-light cursive-custom">Espero te guste mi material musical</h2>
   </div>
   <div class="col col-lg-7 col-md-6 col-12 text-center">
     <img class="img-fluid" src="images/home.jpeg" alt="Imagen Jorge Alexandere" />
@@ -63,8 +63,8 @@
       </div>
       <div class="col col-md-6 col-12 text-center mb-2">
         <figure>
-        <a href="images/cantante-22.jpg" data-lightbox="roadtrip" title="Francisco Lezama"> <img src="images/cantante-2.jpg" class="img-fluid rounded-circle" style="max-height:420px;height:200px;" alt="Miguel Zalazar" /></a>
-          <figcaption><span class="cursive-custom text-light h5">Francisco Lezama</span></figcaption>
+        <a href="images/cantante-22.jpg" data-lightbox="roadtrip" title="Franco Lezama"> <img src="images/cantante-2.jpg" class="img-fluid rounded-circle" style="max-height:420px;height:200px;" alt="Miguel Zalazar" /></a>
+          <figcaption><span class="cursive-custom text-light h5">Franco Lezama</span></figcaption>
         </figure>
       </div>
     </div>
