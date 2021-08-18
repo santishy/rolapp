@@ -66,4 +66,6 @@ Route::delete('/albums/{item}', 'AlbumController@destroy')->name('albums.destroy
 
 Route::post('/contact-us', 'ContactController@sendContact');
 
+Route::get('/eventos', 'SocialEventController@index');
+
 Auth::routes();
