@@ -63,9 +63,9 @@
             <li class="nav-item">
               <a class="nav-link" href="{{ url('gallery') }}">GALERÍA</a>
             </li>
-            <li class="nav-item">
+            <!--<li class="nav-item">
               <a class="nav-link" href="{{ url('eventos') }}">PRESENTACIONES</a>
-            </li>
+            </li>-->
             <li class="nav-item">
               <a class="nav-link" href="{{ url('alabanzas') }}">ALABANZAS</a>
             </li>
