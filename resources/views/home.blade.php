@@ -25,8 +25,8 @@
   <div class="col col-lg-5 col-md-6 col-12 text-center">
     <img class="img-fluid align-middle" src="./images/logo.png" alt="logo" />
     <h1 class="mt-4 cursive-custom text-light">CANTAUTOR CATÓLICO</h1>
-    <h2 class="mt-4 cursive-custom text-light">BIENVENIDO A MI PÁGINA</h2>
-    <h3 class="text-light cursive-custom">Espero te guste mi material musical</h3>
+    <h2 class="mt-4 cursive-custom text-light h1">BIENVENIDO A MI PÁGINA</h2>
+    <h3 class="text-light cursive-custom h2">Espero te guste mi material musical</h3>
   </div>
   <div class="col col-lg-7 col-md-6 col-12 text-center">
     <img class="img-fluid" src="images/home.jpeg" alt="Imagen Jorge Alexandere" />
