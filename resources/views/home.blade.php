@@ -24,8 +24,9 @@
 <div id="divHome" class="row row-custom mb-2">
   <div class="col col-lg-5 col-md-6 col-12 text-center">
     <img class="img-fluid align-middle" src="./images/logo.png" alt="logo" />
-    <h1 class="mt-4 cursive-custom text-light">BIENVENIDO A MI PÁGINA</h1>
-    <h2 class="text-light cursive-custom">Espero te guste mi material musical</h2>
+    <h1 class="mt-4 cursive-custom text-light">CANTAUTOR CATÓLICO</h1>
+    <h2 class="mt-4 cursive-custom text-light">BIENVENIDO A MI PÁGINA</h2>
+    <h3 class="text-light cursive-custom">Espero te guste mi material musical</h3>
   </div>
   <div class="col col-lg-7 col-md-6 col-12 text-center">
     <img class="img-fluid" src="images/home.jpeg" alt="Imagen Jorge Alexandere" />
@@ -53,8 +54,8 @@
       <li><a href="mailto: domisol_alrja@hotmail.com"><span class="material-icons align-middle">email</span> domisol_alrja@hotmail.com</a></li>
       <li><a href="tel: 3531103303"><span class="material-icons align-middle">local_phone</span> 3531103303</a></li>
     </ul>
-    <p class="text-justify align-middle text-light font-custom mb-4">También puedes contactarme para contrataciones de los siguientes artistas:</p>
-    <div class="row">
+    <p class="text-justify align-middle text-light font-custom mb-4 d-none">También puedes contactarme para contrataciones de los siguientes artistas:</p>
+    <div class="row d-none">
       <div class="col col-md-6 col-12 text-center mb-2">
         <figure>
           <a href="images/cantante-12.jpg" data-lightbox="roadtrip" title="Miguel Zalazar"><img src="images/cantante-1.jpg" class="img-fluid rounded" style="max-height:420px;height:200px;" alt="Miguel Zalazar" /></a>
