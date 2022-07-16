@@ -17,6 +17,12 @@ class AlbumController extends Controller
         //return view('albums.aux');
     }
 
+		public function show($id)
+		{
+			$album = Album::find($id);
+			return view('albums.show', ['album' => $album]);
+		}
+
     public function create()
     {
         return view('dashboard.albums.create');
