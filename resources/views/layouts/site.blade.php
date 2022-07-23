@@ -58,17 +58,11 @@
               <a class="nav-link nav-link-custom" data-link="divContact" href="{{ url('/') }}#divContact">CONTACTO</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url('videos') }}">VIDEOS</a>
+              <a class="nav-link" href="#">HORA SANTA</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url('gallery') }}">GALERÍA</a>
-            </li>
-            <!--<li class="nav-item">
-              <a class="nav-link" href="{{ url('eventos') }}">PRESENTACIONES</a>
-            </li>-->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                PAREJAS
+                PLATICAS
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Jóvenes</a>
@@ -77,12 +71,27 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url('alabanzas') }}">ALABANZAS</a>
+              <a class="nav-link" href="#">RETIRO ESPIRITUAL</a>
             </li>
             <li class="nav-item d-none">
-              <a class="nav-link" href="{{ url('albums') }}">CANCIONES</a>
+              <a class="nav-link" href="{{ url('videos') }}">VIDEOS</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item d-none">
+              <a class="nav-link" href="{{ url('gallery') }}">GALERÍA</a>
+            </li>
+            <!--<li class="nav-item">
+              <a class="nav-link" href="{{ url('eventos') }}">PRESENTACIONES</a>
+            </li>-->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                DESCARGAS
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{ url('alabanzas') }}">Alabanzas</a>
+                <a class="dropdown-item" href="{{ url('songs') }}">Canciones</a>
+              </div>
+            </li>
+            <li class="nav-item d-none">
               <a class="nav-link" href="{{ url('songs') }}">DESCARGA</a>
             </li>
             <li class="nav-item">
